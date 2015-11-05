@@ -293,11 +293,15 @@ var tvOS = {
    * @example tvOS.alert('Update Avable', 'Update now', ['Yes', 'No'], function (e) { console.log('Clicked!') })
    */
   alert: function (title, description, buttons, callback) {
+    if (typeof description === 'undefined') description = ' '
+
     var alertString = `<?xml version="1.0" encoding="UTF-8" ?>
     <document>
      <alertTemplate>
       <title>${title}</title>
       <description>${description}</description>`
+
+    if (typeof buttons !== 'object') buttons = ['ok']
 
     for (var i = 0; i < buttons.length; i++) {
       alertString += `<button>
@@ -312,8 +316,24 @@ var tvOS = {
     var alertDoc = parser.parseFromString(alertString, 'application/xml')
     if (typeof callback !== 'undefined') {
       alertDoc.addEventListener('select', function (e) {
-        callback(e)
+        // Fix nasty return
+        var pressed = e.target.innerHTML
+        pressed = pressed.split('>')[1]
+        pressed = pressed.split('<')[0]
+
+        // Human readable!
+        callback(pressed)
         tvOS.windows.alertActive = false
+      }, false)
+    } else {
+      alertDoc.addEventListener('select', function (e) {
+        var pressed = e.target.innerHTML
+        pressed = pressed.split('>')[1]
+        pressed = pressed.split('<')[0]
+
+        navigationDocument.dismissModal(alertDoc)
+        tvOS.windows.alertActive = false
+        return pressed
       }, false)
     }
     navigationDocument.presentModal(alertDoc)
@@ -422,6 +442,77 @@ var tvOS = {
     }
   },
 
+  load: function (event) {
+    var self = this
+    var ele = event.target
+    var templateURL = ele.getAttribute('template')
+    var presentation = ele.getAttribute('presentation')
+
+    console.log(typeof event.target.getAttribute('presentation'))
+    console.log(event.target.getAttribute('presentation'))
+
+    if (typeof event.target.getAttribute('presentation') === 'string') {
+      try {
+        eval(event.target.getAttribute('presentation') + '(' + presentation + ')')
+      } catch (err) {
+        console.log('Error with callback')
+        console.log(err)
+      }
+    }
+  },
+
+  display: function (view) {
+    navigationDocument.pushDocument(view)
+  },
+
+  listView: function (title, list) {
+    var temp = tvOS.ListViewTemplate_before.replace('tvOS_title', title)
+
+    if (typeof list === 'object') {
+      for (var i = 0; i < list.length; i++) {
+        console.log(list[i])
+
+        temp += tvOS.ListViewTemplate_while.replace('tvOS_title', (
+                                            (typeof list[i]['title'] !== 'undefined') ? list[i]['title'] : 'Help')
+                                           )
+                                           .replace('tvOS_description', (
+                                            (typeof list[i]['description'] !== 'undefined') ? list[i]['description'] : 'Please read the manual: ')
+                                           )
+                                           .replace('tvOS_action', (
+                                            (typeof list[i]['action'] !== 'undefined') ? list[i]['action'] : 'tvOS._error')
+                                           )
+                                           .replace('tvOS_image', (
+                                            (typeof list[i]['image'] !== 'undefined') ? list[i]['image'] : 'https://www.wdgwv.com/logo.png')
+                                           )
+                                           .replace('tvOS_template', (
+                                            (typeof list[i]['template'] !== 'undefined') ? list[i]['template'] : 'none')
+                                           )
+                                           .replace('tvOS_helpText', (
+                                            (typeof list[i]['accessibilityText'] !== 'undefined') ? list[i]['accessibilityText'] : 'Error')
+                                           )
+      }
+    } else {
+      temp += tvOS.ListViewTemplate_while.replace('tvOS_title', 'Help')
+                                         .replace('tvOS_description', 'Please read the manual: ')
+                                         .replace('tvOS_action', 'tvOS._error')
+                                         .replace('tvOS_image', 'https://www.wdgwv.com/logo.png')
+                                         .replace('tvOS_template', 'none')
+                                         .replace('tvOS_helpText', 'Error')
+    }
+
+    temp += tvOS.ListViewTemplate_after
+
+    console.log(temp)
+
+    temp = this.makeDocument(temp)
+    temp.addEventListener('select', tvOS.load.bind(tvOS))
+    this.display(temp)
+  },
+
+  _error: function (err) {
+    this.alert('Please read the manual.')
+  },
+
   // * tvOS.loadingTemplate
   // *
   // * Template for loading screen
@@ -434,6 +525,40 @@ var tvOS = {
               <text>%s...</text>
             </activityIndicator>
           </loadingTemplate>
+        </document>`,
+
+  ListViewTemplate_before: `<?xml version="1.0" encoding="UTF-8" ?>
+        <document>
+          <head>
+            <style>
+              .descriptionLayout {
+                tv-text-max-lines: 8;
+              }
+            </style>
+          </head>
+          <listTemplate>
+            <list>
+              <header>
+                <title>tvOS_title</title>
+              </header>
+
+              <section>`,
+
+  ListViewTemplate_while: `
+                <listItemLockup template="tvOS_template" presentation="tvOS_action" accessibilityText="tvOS_helpText">
+                  <title>tvOS_title</title>
+                  <relatedContent>
+                    <lockup>
+                      <img src="tvOS_image" width="857" height="482" />
+                      <description class="descriptionLayout">tvOS_description</description>
+                    </lockup>
+                  </relatedContent>
+                </listItemLockup>`,
+
+  ListViewTemplate_after: `
+              </section>
+            </list>
+          </listTemplate>
         </document>`
 
 }
@@ -456,39 +581,3 @@ App.onError = function (error) {
 }
 
 // END OF tvOS.js
-
-/*
- * TV OS TEST
- */
-
-App.onLaunch = function (options) {
-  //
-  // Show loading indicator with default text ('Loading')...
-  tvOS.showLoadingIndicator()
-
-  // Debug device
-  tvOS.log(tvOS.device)
-
-  setTimeout(function () {
-    // Remove Loading indicator...
-    tvOS.removeLoadingIndicator()
-
-    // Display a alert
-    tvOS.alert('Hi 😀', 'i\m a:', ['apple', 'tv', 'app', '😎'], function (event) {
-      //
-      // Display another 'weird' Alert
-      tvOS.alert('Hi 😀', 'Event=' + event + '\ncan i reload?', ['Reload'], function () {
-        //
-        // Display Loading screen with text Reloading
-        tvOS.showLoadingIndicator('Reloading')
-
-        // Reload timer ;)
-        setTimeout(function () {
-          //
-          // Finally. Reload
-          tvOS.reload()
-        }, 3000)
-      })
-    })
-  }, 1000)
-}
