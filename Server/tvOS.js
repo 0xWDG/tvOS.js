@@ -443,17 +443,13 @@ var tvOS = {
   },
 
   load: function (event) {
-    var self = this
     var ele = event.target
-    var templateURL = ele.getAttribute('template')
+    // var templateURL = ele.getAttribute('template')
     var presentation = ele.getAttribute('presentation')
-
-    console.log(typeof event.target.getAttribute('presentation'))
-    console.log(event.target.getAttribute('presentation'))
 
     if (typeof event.target.getAttribute('presentation') === 'string') {
       try {
-        eval(event.target.getAttribute('presentation') + '(' + presentation + ')')
+        eval(event.target.getAttribute('presentation') + '(' + presentation + ')') //eslint-disable-line
       } catch (err) {
         console.log('Error with callback')
         console.log(err)
@@ -470,26 +466,36 @@ var tvOS = {
 
     if (typeof list === 'object') {
       for (var i = 0; i < list.length; i++) {
-        console.log(list[i])
-
         temp += tvOS.ListViewTemplate_while.replace('tvOS_title', (
-                                            (typeof list[i]['title'] !== 'undefined') ? list[i]['title'] : 'Help')
-                                           )
+                                            (typeof list[i]['title'] !== 'undefined')
+                                            ? list[i]['title']
+                                            : 'Help'
+                                           ))
                                            .replace('tvOS_description', (
-                                            (typeof list[i]['description'] !== 'undefined') ? list[i]['description'] : 'Please read the manual: ')
-                                           )
+                                            (typeof list[i]['description'] !== 'undefined')
+                                            ? list[i]['description']
+                                            : 'Please read the manual: '
+                                           ))
                                            .replace('tvOS_action', (
-                                            (typeof list[i]['action'] !== 'undefined') ? list[i]['action'] : 'tvOS._error')
-                                           )
+                                            (typeof list[i]['action'] !== 'undefined')
+                                            ? list[i]['action']
+                                            : 'tvOS._error'
+                                           ))
                                            .replace('tvOS_image', (
-                                            (typeof list[i]['image'] !== 'undefined') ? list[i]['image'] : 'https://www.wdgwv.com/logo.png')
-                                           )
+                                            (typeof list[i]['image'] !== 'undefined')
+                                            ? list[i]['image']
+                                            : 'https://www.wdgwv.com/logo.png'
+                                           ))
                                            .replace('tvOS_template', (
-                                            (typeof list[i]['template'] !== 'undefined') ? list[i]['template'] : 'none')
-                                           )
+                                            (typeof list[i]['template'] !== 'undefined')
+                                            ? list[i]['template']
+                                            : 'none'
+                                           ))
                                            .replace('tvOS_helpText', (
-                                            (typeof list[i]['accessibilityText'] !== 'undefined') ? list[i]['accessibilityText'] : 'Error')
-                                           )
+                                            (typeof list[i]['accessibilityText'] !== 'undefined')
+                                            ? list[i]['accessibilityText']
+                                            : 'Error'
+                                           ))
       }
     } else {
       temp += tvOS.ListViewTemplate_while.replace('tvOS_title', 'Help')
@@ -501,8 +507,6 @@ var tvOS = {
     }
 
     temp += tvOS.ListViewTemplate_after
-
-    console.log(temp)
 
     temp = this.makeDocument(temp)
     temp.addEventListener('select', tvOS.load.bind(tvOS))
