@@ -9,8 +9,7 @@ evaluateScripts(['http://localhost:9001/tvOS.js'], function (success) {
     myArray.push({
       image: 'https://www.wdgwv.com/logo.png',
       title: 'test 1',
-      description: 'myDescription',
-      template: 'tempL',
+      description: 'my Description',
       action: 'myCustomFunctionForAction_test1',
       accessibilityText: 'None'
     })
@@ -18,8 +17,7 @@ evaluateScripts(['http://localhost:9001/tvOS.js'], function (success) {
     myArray.push({
       image: 'https://www.wdgwv.com/logo.png',
       title: 'test 2',
-      description: 'myDescription',
-      template: 'tempL',
+      description: 'my Description',
       action: 'myCustomFunctionForAction_test2',
       accessibilityText: 'None'
     })
@@ -27,8 +25,7 @@ evaluateScripts(['http://localhost:9001/tvOS.js'], function (success) {
     myArray.push({
       image: 'https://www.wdgwv.com/logo.png',
       title: 'test 3',
-      description: 'myDescription',
-      template: 'tempL',
+      description: 'my Description',
       action: 'myCustomFunctionForAction_test3',
       accessibilityText: 'None'
     })
