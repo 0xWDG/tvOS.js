@@ -509,7 +509,7 @@ var tvOS = {
     this.display(temp)
   },
 
-  _error: function (err) {
+  _error: function () {
     this.alert('Please read the manual.')
   },
 
