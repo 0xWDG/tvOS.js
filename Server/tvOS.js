@@ -323,7 +323,6 @@ var tvOS = {
 
         // Human readable!
         callback(pressed)
-        tvOS.windows.alertActive = false
       }, false)
     } else {
       alertDoc.addEventListener('select', function (e) {
@@ -442,6 +441,10 @@ var tvOS = {
     }
   },
 
+  dismiss: function () {
+    this.removeOldDocument() // Shortcut :)
+  },
+
   load: function (event) {
     var ele = event.target
     // var templateURL = ele.getAttribute('template')
@@ -461,8 +464,19 @@ var tvOS = {
     navigationDocument.pushDocument(view)
   },
 
-  listView: function (title, list) {
+  listView: function (title, list, banner) {
+    if (typeof banner === 'undefined') {
+      banner = ''
+    } else {
+      banner = `<banner>
+        <background>
+          <img src="${banner}" width="1920" height="360" />
+        </background>
+      </banner>`
+    }
+
     var temp = tvOS.ListViewTemplate_before.replace('tvOS_title', title)
+                                           .replace('tvOS_banner', banner)
 
     if (typeof list === 'object') {
       for (var i = 0; i < list.length; i++) {
@@ -541,6 +555,7 @@ var tvOS = {
             </style>
           </head>
           <listTemplate>
+            tvOS_banner
             <list>
               <header>
                 <title>tvOS_title</title>
@@ -554,6 +569,7 @@ var tvOS = {
                   <relatedContent>
                     <lockup>
                       <img src="tvOS_image" width="857" height="482" />
+                      <title>tvOS_title</title>
                       <description class="descriptionLayout">tvOS_description</description>
                     </lockup>
                   </relatedContent>

@@ -30,7 +30,7 @@ evaluateScripts(['http://localhost:9001/tvOS.js'], function (success) {
       accessibilityText: 'None'
     })
 
-    tvOS.listView('TV Demo', myArray)
+    tvOS.listView('TV Demo', myArray, 'https://www.wdgwv.com/banner.png')
   } else {
     console.log('Missing it all!')
   }
@@ -38,4 +38,15 @@ evaluateScripts(['http://localhost:9001/tvOS.js'], function (success) {
 
 function myCustomFunctionForAction_test3 (event) {
   tvOS.alert('Hi!')
+}
+
+function myCustomFunctionForAction_test1 (event) {
+  tvOS.alert('Warning', 'Sure reload?', ['Yes', 'No'], function (event) {
+    if (event.toLowerCase() === 'yes') {
+      tvOS.reload() // Sometimes it won't reload good.
+      // Nov  6 20:38:27  TVapp[17402] <Error>: CGBitmapContextCreate: unsupported parameter combination: set CGBITMAP_CONTEXT_LOG_ERRORS environmental variable to see the details
+    } else {
+      tvOS.dismiss() // Remove alert!
+    }
+  })
 }
