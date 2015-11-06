@@ -22,7 +22,36 @@
 // *
 // * @var object XMLHttpRequest
 if (typeof XMLHttpRequest === 'undefined') {
-  var XMLHttpRequest = {abort: function () { }, open: function () { }, send: function () { }, timeout: null, XMLHttpRequest: function () { }, getAllResponseHeaders: function () { }, getResponseHeader: function () { }, setRequestHeader: function () { }, metrics: null, readyState: null, response: null, responseText: null, responseType: null, responseXML: null, status: null, statusText: null, onabort: function () { }, onerror: function () { }, onload: function () { }, onloadend: function () { }, onloadstart: function () { }, onreadystatechange: function () { }, ontimeout: function () { }, error: function () { }, load: function () { }, loadend: function () { }, loadstart: function () { }, readystatechange: function () { }}
+  var XMLHttpRequest = {
+    abort: function () { },
+    open: function () { },
+    send: function () { },
+    timeout: null,
+    XMLHttpRequest: function () { },
+    getAllResponseHeaders: function () { },
+    getResponseHeader: function () { },
+    setRequestHeader: function () { },
+    metrics: null,
+    readyState: null,
+    response: null,
+    responseText: null,
+    responseType: null,
+    responseXML: null,
+    status: null,
+    statusText: null,
+    onabort: function () { },
+    onerror: function () { },
+    onload: function () { },
+    onloadend: function () { },
+    onloadstart: function () { },
+    onreadystatechange: function () { },
+    ontimeout: function () { },
+    error: function () { },
+    load: function () { },
+    loadend: function () { },
+    loadstart: function () { },
+    readystatechange: function () { }
+  }
 }
 
 // * tvOS Storage Library
@@ -31,7 +60,14 @@ if (typeof XMLHttpRequest === 'undefined') {
 // *
 // * @var object Storage
 if (typeof Storage === 'undefined') {
-  var Storage = {clear: function () { }, getItem: function () { }, key: function () { }, length: function () { }, removeItem: function () { }, setItem: function () { }}
+  var Storage = {
+    clear: function () { },
+    getItem: function () { },
+    key: function () { },
+    length: function () { },
+    removeItem: function () { },
+    setItem: function () { }
+  }
 }
 
 // * tvOS MediaItem Library
@@ -40,7 +76,24 @@ if (typeof Storage === 'undefined') {
 // *
 // * @var object MediaItem
 if (typeof MediaItem === 'undefined') {
-  var MediaItem = {MediaItem: function () { }, contentRatingDomain: function () { }, contentRatingRanking: function () { }, isExplicit: function () { }, artworkImageURL: function () { }, description: function () { }, subtitle: function () { }, title: function () { }, type: function () { }, url: function () { }, highlightGroups: function () { }, interstitials: function () { }, resumeTime: function () { }, loadAssetID: function () { }, loadCertificate: function () { }, loadKey: function () { }}
+  var MediaItem = {
+    MediaItem: function () { },
+    contentRatingDomain: function () { },
+    contentRatingRanking: function () { },
+    isExplicit: function () { },
+    artworkImageURL: function () { },
+    description: function () { },
+    subtitle: function () { },
+    title: function () { },
+    type: function () { },
+    url: function () { },
+    highlightGroups: function () { },
+    interstitials: function () { },
+    resumeTime: function () { },
+    loadAssetID: function () { },
+    loadCertificate: function () { },
+    loadKey: function () { }
+  }
 }
 
 // * tvOS Restrictions Library
@@ -49,7 +102,13 @@ if (typeof MediaItem === 'undefined') {
 // *
 // * @var object Restrictions
 if (typeof Restrictions === 'undefined') {
-  var Restrictions = {allowsExplicit: null, maxMovieRank: null, maxMovieRatingForCountry: null, maxTVShowRank: null, maxTVShowRatingForCountry: null}
+  var Restrictions = {
+    allowsExplicit: null,
+    maxMovieRank: null,
+    maxMovieRatingForCountry: null,
+    maxTVShowRank: null,
+    maxTVShowRatingForCountry: null
+  }
 }
 
 // * tvOS Settings Library
@@ -58,7 +117,12 @@ if (typeof Restrictions === 'undefined') {
 // *
 // * @var object Settings
 if (typeof Settings === 'undefined') {
-  var Settings = {restrictions: null, language: null, onRestrictionsChange: null, storefrontCountryCode: null}
+  var Settings = {
+    restrictions: null,
+    language: null,
+    onRestrictionsChange: null,
+    storefrontCountryCode: null
+  }
 }
 
 // * tvOS TVError Library
@@ -67,7 +131,12 @@ if (typeof Settings === 'undefined') {
 // *
 // * @var object TVError
 if (typeof TVError === 'undefined') {
-  var TVError = {code: null, description: null, domain: null, userInfo: null}
+  var TVError = {
+    code: null,
+    description: null,
+    domain: null,
+    userInfo: null
+  }
 }
 
 // * tvOS Player Library
@@ -76,7 +145,30 @@ if (typeof TVError === 'undefined') {
 // *
 // * @var object Player
 if (typeof Player === 'undefined') {
-  var Player = {overlayDocument: function () { }, Player: function () { }, playlist: function () { }, present: function () { }, pause: function () { }, play: function () { }, playbackState: function () { }, seekToTime: function () { }, setPlaybackRate: function () { }, stop: function () { }, currentMediaItem: function () { }, nextMediaItem: function () { }, previousMediaItem: function () { }, mediaItemDidChange: function () { }, mediaItemWillChange: function () { }, requestSeekToTime: function () { }, shouldHandleStateChange: function () { }, stateDidChange: function () { }, stateWillChange: function () { }, timeBoundaryDidCross: function () { }, timeDidChange: function () { }, timedMetadata: function () { }}
+  var Player = {
+    overlayDocument: function () { },
+    Player: function () { },
+    playlist: function () { },
+    present: function () { },
+    pause: function () { },
+    play: function () { },
+    playbackState: function () { },
+    seekToTime: function () { },
+    setPlaybackRate: function () { },
+    stop: function () { },
+    currentMediaItem: function () { },
+    nextMediaItem: function () { },
+    previousMediaItem: function () { },
+    mediaItemDidChange: function () { },
+    mediaItemWillChange: function () { },
+    requestSeekToTime: function () { },
+    shouldHandleStateChange: function () { },
+    stateDidChange: function () { },
+    stateWillChange: function () { },
+    timeBoundaryDidCross: function () { },
+    timeDidChange: function () { },
+    timedMetadata: function () { }
+  }
 }
 
 // * tvOS DOMParser Library
@@ -85,7 +177,9 @@ if (typeof Player === 'undefined') {
 // *
 // * @var object DOMParser
 if (typeof DOMParser === 'undefined') {
-  var DOMParser = {parseFromString: function () { }}
+  var DOMParser = {
+    parseFromString: function () { }
+  }
 }
 
 // * tvOS Playlist Library
@@ -94,7 +188,14 @@ if (typeof DOMParser === 'undefined') {
 // *
 // * @var object Playlist
 if (typeof Playlist === 'undefined') {
-  var Playlist = {item: function () { }, length: null, Playlist: function () { }, pop: function () { }, push: function () { }, splice: function () { }}
+  var Playlist = {
+    item: function () { },
+    length: null,
+    Playlist: function () { },
+    pop: function () { },
+    push: function () { },
+    splice: function () { }
+  }
 }
 
 // * tvOS MenuBarDocument Library
@@ -103,7 +204,11 @@ if (typeof Playlist === 'undefined') {
 // *
 // * @var object MenuBarDocument
 if (typeof MenuBarDocument === 'undefined') {
-  var MenuBarDocument = {getDocument: function () { }, setDocument: function () { }, setSelectedItem: function () { }}
+  var MenuBarDocument = {
+    getDocument: function () { },
+    setDocument: function () { },
+    setSelectedItem: function () { }
+  }
 }
 
 // * tvOS navigationDocument Library
@@ -112,7 +217,19 @@ if (typeof MenuBarDocument === 'undefined') {
 // *
 // * @var object navigationDocument
 if (typeof navigationDocument === 'undefined') {
-  var navigationDocument = {insertBeforeDocument: null, pushDocument: null, replaceDocument: null, dismissModal: null, presentModal: null, documents: null, clear: null, popDocument: null, popToDocument: null, popToRootDocument: null, removeDocument: null}
+  var navigationDocument = {
+    insertBeforeDocument: null,
+    pushDocument: null,
+    replaceDocument: null,
+    dismissModal: null,
+    presentModal: null,
+    documents: null,
+    clear: null,
+    popDocument: null,
+    popToDocument: null,
+    popToRootDocument: null,
+    removeDocument: null
+  }
 }
 
 // * tvOS Keyboard Library
@@ -121,7 +238,10 @@ if (typeof navigationDocument === 'undefined') {
 // *
 // * @var object Keyboard
 if (typeof Keyboard === 'undefined') {
-  var Keyboard = {text: null, onTextChange: function () { }}
+  var Keyboard = {
+    text: null,
+    onTextChange: function () { }
+  }
 }
 
 // * tvOS App Library
@@ -130,7 +250,12 @@ if (typeof Keyboard === 'undefined') {
 // *
 // * @var object App
 if (typeof App === 'undefined') {
-  var App = {onError: null, onLaunch: null, onExit: null, reload: function () {}}
+  var App = {
+    onError: null,
+    onLaunch: null,
+    onExit: null,
+    reload: function () {}
+  }
 }
 
 // * tvOS Device Library
@@ -139,7 +264,14 @@ if (typeof App === 'undefined') {
 // *
 // * @var object Device
 if (typeof Device === 'undefined') {
-  var Device = {systemVersion: null, appVersion: null, appIdentifier: null, model: null, productType: null, vendorIdentifier: null}
+  var Device = {
+    systemVersion: null,
+    appVersion: null,
+    appIdentifier: null,
+    model: null,
+    productType: null,
+    vendorIdentifier: null
+  }
 }
 
 // * tvOS Library
