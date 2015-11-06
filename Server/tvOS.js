@@ -441,10 +441,26 @@ var tvOS = {
     }
   },
 
+  /**
+   * dismiss
+   *
+   * to dismiss a view
+   *
+   * @example tvOS.dismiss()
+   */
   dismiss: function () {
     this.removeOldDocument() // Shortcut :)
   },
 
+  /**
+   * load
+   *
+   * internal function, do not use
+   * loads the target of a 'listView'
+   *
+   * @param string event the event
+   * @example tvOS.load(event)
+   */
   load: function (event) {
     var ele = event.target
     // var templateURL = ele.getAttribute('template')
@@ -460,10 +476,28 @@ var tvOS = {
     }
   },
 
+  /**
+   * display
+   *
+   * to display a view
+   *
+   * @param mixed view the view you want to display
+   * @example tvOS.display(view)
+   */
   display: function (view) {
     navigationDocument.pushDocument(view)
   },
 
+  /**
+   * listView
+   *
+   * create a nice listView (with support of objects)
+   *
+   * @param string title the title of your listView
+   * @param array list the list (see example)
+   * @param string [banner] full url for banner (optional)
+   * @example tvOS.listView(title, list, banner)
+   */
   listView: function (title, list, banner) {
     if (typeof banner === 'undefined') {
       banner = ''
@@ -527,6 +561,14 @@ var tvOS = {
     this.display(temp)
   },
 
+  /**
+   * error
+   *
+   * Please do not use, this is a internal function
+   * create a nice error
+   *
+   * @example tvOS.error()
+   */
   _error: function () {
     this.alert('Please read the manual.')
   },
@@ -545,6 +587,11 @@ var tvOS = {
           </loadingTemplate>
         </document>`,
 
+  // * tvOS.ListViewTemplate_before
+  // *
+  // * Template for listView (before)
+  // *
+  // * @var string ListViewTemplate_before
   ListViewTemplate_before: `<?xml version="1.0" encoding="UTF-8" ?>
         <document>
           <head>
@@ -563,6 +610,11 @@ var tvOS = {
 
               <section>`,
 
+  // * tvOS.ListViewTemplate_while
+  // *
+  // * Template for listView (while parsing items)
+  // *
+  // * @var string ListViewTemplate_while
   ListViewTemplate_while: `
                 <listItemLockup template="tvOS_template" presentation="tvOS_action" accessibilityText="tvOS_helpText">
                   <title>tvOS_title</title>
@@ -575,6 +627,11 @@ var tvOS = {
                   </relatedContent>
                 </listItemLockup>`,
 
+  // * tvOS.ListViewTemplate_after
+  // *
+  // * Template for listView (after)
+  // *
+  // * @var string ListViewTemplate_after
   ListViewTemplate_after: `
               </section>
             </list>
