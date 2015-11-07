@@ -422,7 +422,7 @@ var tvOS = {
    * @param string description the description
    * @param array buttons the buttons
    * @param function callback the callback
-   * @example tvOS.alert('Update Avable', 'Update now', ['Yes', 'No'], function (e) { console.log('Clicked!') })
+   * @example tvOS.alert('Update Avable', 'Update now', ['Yes', 'No'], function (e) { console.log('Clicked: ' + event) })
    */
   alert: function (title, description, buttons, callback) {
     if (typeof description === 'undefined') description = ' '
