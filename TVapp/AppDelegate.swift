@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
         
         let appControllerContext = TVApplicationControllerContext()
         
-        if let javaScriptApplicationURL = NSURL(string: "http://localhost:9001/example_compilation.js") { //Example.
+        if let javaScriptApplicationURL = NSURL(string: "http://localhost:9001/example_rating.js") { //Example.
             appControllerContext.javaScriptApplicationURL = javaScriptApplicationURL
             print("setting javaScriptApplicationURL to \(javaScriptApplicationURL)")
         }

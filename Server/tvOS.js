@@ -658,6 +658,32 @@ var tvOS = {
   },
 
   /**
+   * RatingView
+   *
+   * create a nice RatingView (with support of objects)
+   *
+   * @param string title the title of your RatingView
+   * @param string rating the default/averange rating
+   * @param string callback function to relay on
+   * @example tvOS.RatingView(title, rating, callback)
+   */
+  RatingView: function (title, rating, callback) {
+    var temp = ''
+
+    temp += tvOS.TemplateRatingView.replace('tvOS_title', title)
+                                   .replace('tvOS_rating', rating)
+
+    temp = tvOS.makeDocument(temp)
+    temp.addEventListener('select', function (e) {
+      console.log(e)
+      var pressed = e.target.innerHTML
+      console.log(pressed)
+    })
+
+    tvOS.display(temp)
+  },
+
+  /**
    * CompilationView
    *
    * create a nice CompilationView (with support of objects)
@@ -896,6 +922,19 @@ var tvOS = {
       </section>
     </list>
   </compilationTemplate>
+</document>`,
+
+  // * tvOS.TemplateRatingView
+  // *
+  // * Template for TemplateRating
+  // *
+  // * @var string TemplateRatingView
+  TemplateRatingView: `<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <ratingTemplate>
+      <title>tvOS_title</title>
+      <ratingBadge value="tvOS_rating"></ratingBadge>
+  </ratingTemplate>
 </document>`
 
 }
