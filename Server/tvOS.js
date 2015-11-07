@@ -16,44 +16,6 @@
 // - https://github.com/wesdegroot/tvOS.js
 // - https://www.wdgwv.com
 
-// * tvOS XMLHttpRequest Library
-// *
-// * If it is missing (es-lint)
-// *
-// * @var object XMLHttpRequest
-if (typeof XMLHttpRequest === 'undefined') {
-  var XMLHttpRequest = {
-    abort: function () { },
-    open: function () { },
-    send: function () { },
-    timeout: null,
-    XMLHttpRequest: function () { },
-    getAllResponseHeaders: function () { },
-    getResponseHeader: function () { },
-    setRequestHeader: function () { },
-    metrics: null,
-    readyState: null,
-    response: null,
-    responseText: null,
-    responseType: null,
-    responseXML: null,
-    status: null,
-    statusText: null,
-    onabort: function () { },
-    onerror: function () { },
-    onload: function () { },
-    onloadend: function () { },
-    onloadstart: function () { },
-    onreadystatechange: function () { },
-    ontimeout: function () { },
-    error: function () { },
-    load: function () { },
-    loadend: function () { },
-    loadstart: function () { },
-    readystatechange: function () { }
-  }
-}
-
 // * tvOS Storage Library
 // *
 // * If it is missing (es-lint)
@@ -534,7 +496,9 @@ var tvOS = {
       this.windows.windowActive = this.loadingIndicator
     }
 
-    if (!this.windows.loadingIndicator && presentation !== 'modalDialogPresenter' && presentation !== 'menuBarItemPresenter') {
+    if (!this.windows.loadingIndicator &&
+        presentation !== 'modalDialogPresenter' &&
+        presentation !== 'menuBarItemPresenter') {
       navigationDocument.pushDocument(this.loadingIndicator)
       this.windows.loadingIndicator = true
     }
