@@ -658,6 +658,107 @@ var tvOS = {
   },
 
   /**
+   * CompilationView
+   *
+   * create a nice CompilationView (with support of objects)
+   *
+   * @param string title the title of your CompilationView
+   * @param string subtitle the subtitle of your CompilationView
+   * @param string text the text of your CompilationView
+   * @param string image the image of your CompilationView
+   * @param array list the list (see example)
+   * @param array buttons the buttons (see example)
+   * @example tvOS.CompilationView(title, subtitle, text, image, items, buttons)
+   */
+  CompilationView: function (title, subtitle, text, image, items, buttons) {
+    this.Compilation(title, subtitle, text, image, items, buttons)
+  },
+
+  /**
+   * Compilation
+   *
+   * create a nice CompilationView (with support of objects)
+   *
+   * @param string title the title of your CompilationView
+   * @param string subtitle the subtitle of your CompilationView
+   * @param string text the text of your CompilationView
+   * @param string image the image of your CompilationView
+   * @param array list the list (see example)
+   * @param array buttons the buttons (see example)
+   * @example tvOS.Compilation(title, subtitle, text, image, items, buttons)
+   */
+  Compilation: function (title, subtitle, text, image, items, buttons) {
+    var temp = ''
+    var _buttons = ''
+
+    if (typeof buttons !== 'undefined') {
+      for (var b = 0; b < buttons.length; b++) {
+        _buttons += `<buttonLockup>
+                       <badge src="${buttons[b]['image']}" class="whiteButton" />
+                       <title>${buttons[b]['title']}</title>
+                     </buttonLockup>`
+      }
+    }
+
+    temp += tvOS.CompilationView_before.replace('tvOS_title', title)
+                                       .replace('tvOS_image', image)
+                                       .replace('tvOS_subtitle', subtitle)
+                                       .replace('tvOS_text', text)
+                                       .replace('tvOS_buttons', _buttons)
+
+    if (typeof items !== 'object') {
+      items = [{
+        title: 'Error',
+        subtitle: 'Please read the redme',
+        decoration: '🤓'
+      }]
+    }
+
+    for (var i = 0; i < items.length; i++) {
+      temp += tvOS.CompilationView_while.replace('tvOS_title', (
+                                          (typeof items[i]['title'] !== 'undefined')
+                                          ? items[i]['title']
+                                          : 'Error'
+                                        ))
+                                        .replace('tvOS_subtitle', (
+                                          (typeof items[i]['subtitle'] !== 'undefined')
+                                          ? items[i]['subtitle']
+                                          : ' '
+                                        ))
+                                        .replace('tvOS_decoration', (
+                                          (typeof items[i]['decoration'] !== 'undefined')
+                                          ? items[i]['decoration']
+                                          : ' '
+                                        ))
+                                        .replace('tvOS_item', i + 1)
+    }
+
+    temp += tvOS.CompilationView_after
+    temp = tvOS.makeDocument(temp)
+    temp.addEventListener('select', function (e) {
+      var pressed = e.target.innerHTML
+      pressed = pressed.split('<title')[1]
+      pressed = pressed.split('/title>')[0]
+      pressed = pressed.split('>')[1]
+      pressed = pressed.split('<')[0]
+
+      for (var s = 0; s < items.length; s++) {
+        if (pressed === items[s]['title']) {
+          items[s]['action'](pressed)
+        }
+      }
+      if (typeof buttons !== 'undefined') {
+        for (var b = 0; b < buttons.length; b++) {
+          if (pressed === buttons[b]['title']) {
+            buttons[b]['action'](pressed)
+          }
+        }
+      }
+    })
+    tvOS.display(temp)
+  },
+
+  /**
    * error
    *
    * Please do not use, this is a internal function
@@ -732,7 +833,70 @@ var tvOS = {
               </section>
             </list>
           </listTemplate>
-        </document>`
+        </document>`,
+
+  // * tvOS.CompilationView_before
+  // *
+  // * Template for CompilationView (before)
+  // *
+  // * @var string CompilationView_before
+  CompilationView_before: `<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+  <head>
+    <style>
+    .ordinalLayout {
+      margin: 8 0 0 9;
+    }
+    .whiteButton {
+      tv-tint-color: rgb(255, 255, 255);
+    }
+    </style>
+  </head>
+  <compilationTemplate theme="dark">
+    <list>
+      <relatedContent>
+        <itemBanner>
+          <heroImg src="tvOS_image" />
+          <row>
+            tvOS_buttons
+          </row>
+        </itemBanner>
+      </relatedContent>
+      <header>
+        <title>tvOS_title</title>
+        <subtitle>tvOS_subtitle</subtitle>
+        <row>
+          <text>tvOS_text</text>
+        </row>
+      </header>
+      <section>
+        <header>
+          <title> </title>
+        </header>`,
+
+  // * tvOS.CompilationView_while
+  // *
+  // * Template for CompilationView (while)
+  // *
+  // * @var string CompilationView_while
+  CompilationView_while: `
+        <listItemLockup>
+          <ordinal minLength="2" class="ordinalLayout">tvOS_item</ordinal>
+          <title>tvOS_title</title>
+          <subtitle>tvOS_subtitle</subtitle>
+          <decorationLabel>tvOS_decoration</decorationLabel>
+        </listItemLockup>`,
+
+  // * tvOS.CompilationView_after
+  // *
+  // * Template for CompilationView (after)
+  // *
+  // * @var string CompilationView_after
+  CompilationView_after: `
+      </section>
+    </list>
+  </compilationTemplate>
+</document>`
 
 }
 
