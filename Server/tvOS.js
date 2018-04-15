@@ -520,7 +520,7 @@ var tvOS = {
    * @param string description the description
    * @param array buttons the buttons
    * @param function callback the callback
-   * @example tvOS.alert('Update Avable', 'Update now', ['Yes', 'No'], function (e) { console.log('Clicked: ' + event) })
+   * @example tvOS.alert('Update Avable', 'Update now', ['Yes', 'No'], function (e) { console.log('Clicked: ' + e) })
    */
   alert: function (title, description, buttons, callback) {
     // if no description, then make a empty description
