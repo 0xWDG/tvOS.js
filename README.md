@@ -1,6 +1,7 @@
 # tvOS.js
 
 [![Join the chat at https://gitter.im/wdg/tvOS.js](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/wdg/tvOS.js?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwdg%2FtvOS.js.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwdg%2FtvOS.js?ref=badge_shield)
 
 tvOS.js is a JavaScript Library for easier developing in TVJS/TVML
 
@@ -33,3 +34,7 @@ Made with 💙 in 🇳🇱
 ------
 
 ![](https://cdn.rawgit.com/feross/standard/master/badge.svg)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwdg%2FtvOS.js.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwdg%2FtvOS.js?ref=badge_large)
