@@ -10,7 +10,7 @@ evaluateScripts(['http://localhost:9001/tvOS.js'], function (success) {
     var count = 0
 
     // load data
-    tvOS.ajax('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&q=http://www.nu.nl/rss/Algemeen&num=20', 'GET', function (data) {
+    tvOS.ajax('https://www.wdgwv.com/XML2JSON.php?feed=http://www.nu.nl/rss/Algemeen&num=20', 'GET', function (data) {
       data = JSON.parse(data)
       data = data['responseData']['feed']['entries']
       for (var i in data) {

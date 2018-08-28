@@ -811,7 +811,7 @@ var tvOS = {
     }
 
     var temp = tvOS.ListViewTemplate_before.replace('tvOS_title', this.safeString(title))
-                                           .replace('tvOS_banner', (banner))
+      .replace('tvOS_banner', (banner))
 
     if (typeof list === 'object') {
       for (var i = 0; i < list.length; i++) {
@@ -829,59 +829,59 @@ var tvOS = {
         }
 
         temp += tvOS.ListViewTemplate_while.replace('tvOS_title', (
-                                            (typeof list[i]['title'] !== 'undefined')
-                                            ? this.safeString(list[i]['title'])
-                                            : 'Help'
-                                           ))
-                                           .replace('tvOS_title', (
-                                            (typeof list[i]['title'] !== 'undefined')
-                                            ? this.safeString(list[i]['title'])
-                                            : 'Help'
-                                           ))
-                                           .replace('tvOS_description', (
-                                            (typeof list[i]['description'] !== 'undefined')
-                                            ? this.safeString(list[i]['description'])
-                                            : ''
-                                           ))
-                                           .replace('tvOS_subtitle', (
-                                            (typeof list[i]['subtitle'] !== 'undefined')
-                                            ? list[i]['subtitle']
-                                            : ''
-                                           ))
-                                           .replace('tvOS_subtitle', (
-                                            (typeof list[i]['subtitle'] !== 'undefined')
-                                            ? list[i]['subtitle']
-                                            : ''
-                                           ))
-                                           .replace('tvOS_action', (
-                                            (typeof list[i]['action'] !== 'undefined')
-                                            ? this.safeString(list[i]['action'])
-                                            : 'tvOS._error'
-                                           ))
-                                           .replace('tvOS_image', (
-                                            (typeof list[i]['image'] !== 'undefined')
-                                            ? (list[i]['image'])
-                                            : ''
-                                           ))
-                                           .replace('tvOS_template', (
-                                            (typeof list[i]['template'] !== 'undefined')
-                                            ? this.safeString(list[i]['template'])
-                                            : 'none'
-                                           ))
-                                           .replace('tvOS_helpText', (
-                                            (typeof list[i]['accessibilityText'] !== 'undefined')
-                                            ? this.safeString(list[i]['accessibilityText'])
-                                            : 'No help available'
-                                           ))
+          (typeof list[i]['title'] !== 'undefined')
+            ? this.safeString(list[i]['title'])
+            : 'Help'
+        ))
+          .replace('tvOS_title', (
+            (typeof list[i]['title'] !== 'undefined')
+              ? this.safeString(list[i]['title'])
+              : 'Help'
+          ))
+          .replace('tvOS_description', (
+            (typeof list[i]['description'] !== 'undefined')
+              ? this.safeString(list[i]['description'])
+              : ''
+          ))
+          .replace('tvOS_subtitle', (
+            (typeof list[i]['subtitle'] !== 'undefined')
+              ? list[i]['subtitle']
+              : ''
+          ))
+          .replace('tvOS_subtitle', (
+            (typeof list[i]['subtitle'] !== 'undefined')
+              ? list[i]['subtitle']
+              : ''
+          ))
+          .replace('tvOS_action', (
+            (typeof list[i]['action'] !== 'undefined')
+              ? this.safeString(list[i]['action'])
+              : 'tvOS._error'
+          ))
+          .replace('tvOS_image', (
+            (typeof list[i]['image'] !== 'undefined')
+              ? (list[i]['image'])
+              : ''
+          ))
+          .replace('tvOS_template', (
+            (typeof list[i]['template'] !== 'undefined')
+              ? this.safeString(list[i]['template'])
+              : 'none'
+          ))
+          .replace('tvOS_helpText', (
+            (typeof list[i]['accessibilityText'] !== 'undefined')
+              ? this.safeString(list[i]['accessibilityText'])
+              : 'No help available'
+          ))
       }
     } else {
       temp += tvOS.ListViewTemplate_while.replace('tvOS_title', 'Help')
-                                         .replace('tvOS_title', 'Help')
-                                         .replace('tvOS_description', 'Please read the manual')
-                                         .replace('tvOS_action', 'tvOS._error')
-                                         .replace('tvOS_image', 'https://www.wdgwv.com/logo.png')
-                                         .replace('tvOS_template', 'none')
-                                         .replace('tvOS_helpText', 'Error')
+        .replace('tvOS_title', 'Help')
+        .replace('tvOS_description', 'Please read the manual')
+        .replace('tvOS_action', 'tvOS._error')
+        .replace('tvOS_image', 'https://www.wdgwv.com/logo.png')
+        .replace('tvOS_template', 'none')
+        .replace('tvOS_helpText', 'Error')
     }
 
     temp += tvOS.ListViewTemplate_after
@@ -910,7 +910,7 @@ var tvOS = {
 
     // Parse the template Rating View
     temp += tvOS.TemplateRatingView.replace('tvOS_title', this.safeString(title))
-                                   .replace('tvOS_rating', rating)
+      .replace('tvOS_rating', rating)
 
     // Create the document..
     temp = tvOS.makeDocument(temp)
@@ -1007,7 +1007,7 @@ var tvOS = {
    */
   parseRSS: function (url, callback) {
     // Parse using google api's
-    tvOS.ajax('https://ajax.googleapis.com/ajax/services/feed/load?v=2.0&q=' + url + '&num=20', 'GET', function (data) {
+    tvOS.ajax('https://www.wdgwv.com/XML2JSON.php?feed=' + url + '&num=20', 'GET', function (data) {
       // Parse the JSON To object
       data = JSON.parse(data)
       // Callback & Done.
@@ -1066,10 +1066,10 @@ var tvOS = {
 
     // Parse the CompilationView (BEFORE) Part
     temp += tvOS.CompilationView_before.replace('tvOS_title', this.safeString(title))
-                                       .replace('tvOS_image', image)
-                                       .replace('tvOS_subtitle', this.safeString(subtitle))
-                                       .replace('tvOS_text', this.safeString(text))
-                                       .replace('tvOS_buttons', _buttons)
+      .replace('tvOS_image', image)
+      .replace('tvOS_subtitle', this.safeString(subtitle))
+      .replace('tvOS_text', this.safeString(text))
+      .replace('tvOS_buttons', _buttons)
 
     // If there is something weird (no items) then display a Error object.
     if (typeof items !== 'object') {
@@ -1084,21 +1084,21 @@ var tvOS = {
     for (var i = 0; i < items.length; i++) {
       // Add the (while) part of the CompilationView
       temp += tvOS.CompilationView_while.replace('tvOS_title', (
-                                          (typeof items[i]['title'] !== 'undefined')
-                                          ? this.safeString(items[i]['title'])
-                                          : 'Error'
-                                        )) // Parse the title
-                                        .replace('tvOS_subtitle', (
-                                          (typeof items[i]['subtitle'] !== 'undefined')
-                                          ? this.safeString(items[i]['subtitle'])
-                                          : ' '
-                                        )) // Parse the subtitle
-                                        .replace('tvOS_decoration', (
-                                          (typeof items[i]['decoration'] !== 'undefined')
-                                          ? this.safeString(items[i]['decoration'])
-                                          : ' '
-                                        )) // Parse the decoration
-                                        .replace('tvOS_item', i + 1) // This one is for event(Callback) triggering
+        (typeof items[i]['title'] !== 'undefined')
+          ? this.safeString(items[i]['title'])
+          : 'Error'
+      )) // Parse the title
+        .replace('tvOS_subtitle', (
+          (typeof items[i]['subtitle'] !== 'undefined')
+            ? this.safeString(items[i]['subtitle'])
+            : ' '
+        )) // Parse the subtitle
+        .replace('tvOS_decoration', (
+          (typeof items[i]['decoration'] !== 'undefined')
+            ? this.safeString(items[i]['decoration'])
+            : ' '
+        )) // Parse the decoration
+        .replace('tvOS_item', i + 1) // This one is for event(Callback) triggering
     }
 
     // Add the footer
@@ -1162,7 +1162,7 @@ var tvOS = {
     var temp = ''
 
     temp += tvOS.SearchView_before.replace('tvOS_search', this.safeString(search))
-                                  .replace('tvOS_results', results)
+      .replace('tvOS_results', results)
 
     if (typeof items !== 'object') {
       items = [{
@@ -1173,7 +1173,7 @@ var tvOS = {
 
     for (var i = 0; i < items.length; i++) {
       temp += tvOS.SearchView_while.replace('tvOS_title', this.safeString(items[i]['title']))
-                                   .replace('tvOS_image', items[i]['image'])
+        .replace('tvOS_image', items[i]['image'])
     }
 
     temp += tvOS.SearchView_after
@@ -1184,8 +1184,8 @@ var tvOS = {
     // Get keyboard, it must be easier...
     // Description temp = dom node.
     var textField = temp.childNodes.item(0) // {0: document}
-                        .childNodes.item(1) // {0: head, 1: searchTemplate}
-                        .childNodes.item(0) // {0: searchField, 1: collectionList}
+      .childNodes.item(1) // {0: head, 1: searchTemplate}
+      .childNodes.item(0) // {0: searchField, 1: collectionList}
     //
     // ok we'll finally got the good childnode, now get te Feature 'Keyboard'
     var myKeyboard = textField.getFeature('Keyboard')
@@ -1252,73 +1252,73 @@ var tvOS = {
   toEmoij: function (str) {
     // > tvOS.emoij.nerd
     // < "..." = $1
-    return str.replace(/8\)/g, this.emoij.nerd)     // Nerd Face
-              .replace(/8-\)/g, this.emoij.nerd)    // Nerd Face
-              .replace(/B\)/g, this.emoij.nerd)     // Nerd Face
-              .replace(/g\B-\)/g, this.emoij.nerd)  // Nerd Face
-              .replace(/b\)/g, this.emoij.nerd)     // Nerd Face
-              .replace(/b-\)/g, this.emoij.nerd)    // Nerd Face
-              .replace(/:\)/g, this.emoij.smilie)   // Smilie :)
-              .replace(/:-\)/g, this.emoij.smilie)  // Smilie :)
-              .replace(/:]/g, this.emoij.smilie)    // Smilie :)
-              .replace(/:-]/g, this.emoij.smilie)   // Smilie :)
-              .replace(/:d/g, this.emoij.dsmilie)   // Smilie :D
-              .replace(/:-d/g, this.emoij.dsmilie)  // Smilie :D
-              .replace(/:D/g, this.emoij.dsmilie)   // Smilie :D
-              .replace(/:-D/g, this.emoij.dsmilie)  // Smilie :D
-              .replace(/(H)/g, '\ud83d\ude0e')    // Smilie with sun glasses
-              .replace(/(h)/g, '\ud83d\ude0e')    // Smilie with sun glasses
-              .replace(/:\'\(/g, '\ud83d\ude2d')  // Crying Smilie
-              .replace(/:\'-\(/g, '\ud83d\ude2d') // Crying Smilie
-              .replace(/:\(/g, '\u2639\ufe0f')
-              .replace(/:-\(/g, '\u2639\ufe0f')
-              .replace(/:\[/g, '\u2639\ufe0f')
-              .replace(/:-\[/g, '\u2639\ufe0f')
-              .replace(/:@/g, '\ud83d\ude21')
-              .replace(/:O/g, '\ud83d\ude2e')
-              .replace(/:-O/g, '\ud83d\ude2e')
-              .replace(/:o/g, '\ud83d\ude2e')
-              .replace(/:-o/g, '\ud83d\ude2e')
-              .replace(/:\//g, '\ud83e\udd14')
-              .replace(/:-\//g, '\ud83e\udd14')
-              .replace(/:\|/g, '\ud83d\ude10')
-              .replace(/:-\|/g, '\ud83d\ude10')
-              .replace(/xD/g, '\ud83d\ude35')
-              .replace(/XD/g, '\ud83d\ude35')
-              .replace(/xd/g, '\ud83d\ude35')
-              .replace(/xd/g, '\ud83d\ude35')
-              .replace(/x-D/g, '\ud83d\ude35')
-              .replace(/X-D/g, '\ud83d\ude35')
-              .replace(/x-d/g, '\ud83d\ude35')
-              .replace(/x-d/g, '\ud83d\ude35')
-              .replace(/:-p/g, '\ud83d\ude1c')
-              .replace(/:p/g, '\ud83d\ude1c')
-              .replace(/:-P/g, '\ud83d\ude1c')
-              .replace(/:P/g, '\ud83d\ude1c')
-              .replace(/;p/g, '\ud83d\ude1c')
-              .replace(/;P/g, '\ud83d\ude1c')
-              .replace(/;-p/g, '\ud83d\ude1c')
-              .replace(/;-P/g, '\ud83d\ude1c')
-              .replace(/:x/g, '\ud83d\ude36')
-              .replace(/:X/g, '\ud83d\ude36')
-              .replace(/:-x/g, '\ud83d\ude36')
-              .replace(/:-X/g, '\ud83d\ude36')
-              .replace(/:+1:/g, '\ud83d\udc4d')
-              .replace(/:-1:/g, '\ud83d\udc4e')
-              .replace(/;\)/g, '\ud83d\ude09')
-              .replace(/;-\)/g, '\ud83d\ude09')
-              .replace(/:$/g, '\u263a\ufe0f')
-              .replace(/:-$/g, '\u263a\ufe0f')
-              .replace(/:s/g, '\ud83d\ude16')
-              .replace(/:S/g, '\ud83d\ude16')
-              .replace(/:-s/g, '\ud83d\ude16')
-              .replace(/:-S/g, '\ud83d\ude16')
-              .replace(/<3/g, this.smilie.heart)          // Heart
-              .replace(/\(L\)/g, this.smilie.heart)       // Heart
-              .replace(/\(l\)/g, this.smilie.heart)       // Heart
-              .replace(/<\/3/g, this.smilie.brokenheart)  // Broken heart
-              .replace(/\(U\)/g, this.smilie.brokenheart) // Broken heart
-              .replace(/\(u\)/g, this.smilie.brokenheart) // Broken heart
+    return str.replace(/8\)/g, this.emoij.nerd) // Nerd Face
+      .replace(/8-\)/g, this.emoij.nerd) // Nerd Face
+      .replace(/B\)/g, this.emoij.nerd) // Nerd Face
+      .replace(/g\B-\)/g, this.emoij.nerd) // Nerd Face
+      .replace(/b\)/g, this.emoij.nerd) // Nerd Face
+      .replace(/b-\)/g, this.emoij.nerd) // Nerd Face
+      .replace(/:\)/g, this.emoij.smilie) // Smilie :)
+      .replace(/:-\)/g, this.emoij.smilie) // Smilie :)
+      .replace(/:]/g, this.emoij.smilie) // Smilie :)
+      .replace(/:-]/g, this.emoij.smilie) // Smilie :)
+      .replace(/:d/g, this.emoij.dsmilie) // Smilie :D
+      .replace(/:-d/g, this.emoij.dsmilie) // Smilie :D
+      .replace(/:D/g, this.emoij.dsmilie) // Smilie :D
+      .replace(/:-D/g, this.emoij.dsmilie) // Smilie :D
+      .replace(/(H)/g, '\ud83d\ude0e') // Smilie with sun glasses
+      .replace(/(h)/g, '\ud83d\ude0e') // Smilie with sun glasses
+      .replace(/:\'\(/g, '\ud83d\ude2d') // Crying Smilie
+      .replace(/:\'-\(/g, '\ud83d\ude2d') // Crying Smilie
+      .replace(/:\(/g, '\u2639\ufe0f')
+      .replace(/:-\(/g, '\u2639\ufe0f')
+      .replace(/:\[/g, '\u2639\ufe0f')
+      .replace(/:-\[/g, '\u2639\ufe0f')
+      .replace(/:@/g, '\ud83d\ude21')
+      .replace(/:O/g, '\ud83d\ude2e')
+      .replace(/:-O/g, '\ud83d\ude2e')
+      .replace(/:o/g, '\ud83d\ude2e')
+      .replace(/:-o/g, '\ud83d\ude2e')
+      .replace(/:\//g, '\ud83e\udd14')
+      .replace(/:-\//g, '\ud83e\udd14')
+      .replace(/:\|/g, '\ud83d\ude10')
+      .replace(/:-\|/g, '\ud83d\ude10')
+      .replace(/xD/g, '\ud83d\ude35')
+      .replace(/XD/g, '\ud83d\ude35')
+      .replace(/xd/g, '\ud83d\ude35')
+      .replace(/xd/g, '\ud83d\ude35')
+      .replace(/x-D/g, '\ud83d\ude35')
+      .replace(/X-D/g, '\ud83d\ude35')
+      .replace(/x-d/g, '\ud83d\ude35')
+      .replace(/x-d/g, '\ud83d\ude35')
+      .replace(/:-p/g, '\ud83d\ude1c')
+      .replace(/:p/g, '\ud83d\ude1c')
+      .replace(/:-P/g, '\ud83d\ude1c')
+      .replace(/:P/g, '\ud83d\ude1c')
+      .replace(/;p/g, '\ud83d\ude1c')
+      .replace(/;P/g, '\ud83d\ude1c')
+      .replace(/;-p/g, '\ud83d\ude1c')
+      .replace(/;-P/g, '\ud83d\ude1c')
+      .replace(/:x/g, '\ud83d\ude36')
+      .replace(/:X/g, '\ud83d\ude36')
+      .replace(/:-x/g, '\ud83d\ude36')
+      .replace(/:-X/g, '\ud83d\ude36')
+      .replace(/:+1:/g, '\ud83d\udc4d')
+      .replace(/:-1:/g, '\ud83d\udc4e')
+      .replace(/;\)/g, '\ud83d\ude09')
+      .replace(/;-\)/g, '\ud83d\ude09')
+      .replace(/:$/g, '\u263a\ufe0f')
+      .replace(/:-$/g, '\u263a\ufe0f')
+      .replace(/:s/g, '\ud83d\ude16')
+      .replace(/:S/g, '\ud83d\ude16')
+      .replace(/:-s/g, '\ud83d\ude16')
+      .replace(/:-S/g, '\ud83d\ude16')
+      .replace(/<3/g, this.smilie.heart) // Heart
+      .replace(/\(L\)/g, this.smilie.heart) // Heart
+      .replace(/\(l\)/g, this.smilie.heart) // Heart
+      .replace(/<\/3/g, this.smilie.brokenheart) // Broken heart
+      .replace(/\(U\)/g, this.smilie.brokenheart) // Broken heart
+      .replace(/\(u\)/g, this.smilie.brokenheart) // Broken heart
   },
 
   /**
@@ -1404,11 +1404,11 @@ var tvOS = {
   _error: function (func, description) {
     // Print the error in a alertView
     this.alert('Please read the manual' + (typeof func === 'string')
-                                           ? ' for ' + func
-                                           : '', // For 'function'
-                                          (typeof description === 'string')
-                                            ? description
-                                            : '') // Create a error.
+      ? ' for ' + func
+      : '', // For 'function'
+    (typeof description === 'string')
+      ? description
+      : '') // Create a error.
   },
 
   /**
@@ -1616,14 +1616,14 @@ var tvOS = {
       }
 
       var template = tvOS.loginTemplate.replace('tvOS_title', title)
-                                       .replace('tvOS_title', title)
-                                       .replace('tvOS_image', (typeof image === 'string' && image !== '')
-                                                              ? '<img src=\'' + image + '\' />'
-                                                              : '')
-                                       .replace('tvOS_buttons', buttons)
-                                       .replace('tvOS_secure', (typeof needPWD !== 'boolean')
-                                                               ? ''
-                                                               : 'secure=\'true\' ')
+        .replace('tvOS_title', title)
+        .replace('tvOS_image', (typeof image === 'string' && image !== '')
+          ? '<img src=\'' + image + '\' />'
+          : '')
+        .replace('tvOS_buttons', buttons)
+        .replace('tvOS_secure', (typeof needPWD !== 'boolean')
+          ? ''
+          : 'secure=\'true\' ')
 
       var ttemp = tvOS.makeDocument(template)
       var ttext = ttemp.getElementById('inputText')
