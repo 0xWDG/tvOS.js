@@ -8,7 +8,7 @@ Display an Alert message
 
 ## Example
 
-    tvOS.alert('Update Avable', 'Update now', ['Yes', 'No'], function (e) { console.log('Clicked: ' + event) })
+    tvOS.alert('Update Avable', 'Update now', ['Yes', 'No'], function (e) { console.log('Clicked: ' + e) })
 
 
 <br><br>
