@@ -15,56 +15,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
     var window: UIWindow?
     var appController: TVApplicationController?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         self.window = UIWindow(frame:UIScreen.main.bounds)
         
         let appControllerContext = TVApplicationControllerContext()
 //        if let javaScriptApplicationURL = NSURL(string: "http://localhost:9001/index.js") { //LOCAL Example.
-        if let javaScriptApplicationURL = URL(string: "https://wdg.github.io/tvOS.js/index.js") { //LIVE Example.
+        if let javaScriptApplicationURL = URL(string: "https://0xwdg.github.io/tvOS.js/index.js") { //LIVE Example.
             appControllerContext.javaScriptApplicationURL = javaScriptApplicationURL
             print("setting javaScriptApplicationURL to \(javaScriptApplicationURL)")
         }
-        
-        if let options = launchOptions {
-            for (kind, value) in options {
-                if let kindStr = kind as? String {
-                    appControllerContext.launchOptions[kindStr] = value
-                }
-            }
-        }
-        
-        self.appController = TVApplicationController(context: appControllerContext, window: self.window, delegate: self)
-        
+
+        self.appController = TVApplicationController(
+            context: appControllerContext,
+            window: self.window,
+            delegate: self
+        )
+
         return true
     }
     
     // To enable console.log
     func appController(_ appController: TVApplicationController, evaluateAppJavaScriptIn jsContext: JSContext) {
         jsContext.evaluateScript("var console = { log: function () { var message = ''; for (var i = 0; i < arguments.length; i++) { message += arguments[i] + ' ' }; console.print(message) } };")
-        let logFunction: @convention(block) (NSString!) -> Void = { (message:NSString!) in
-            print("JS: \(message)")
+        let logFunction: @convention(block) (NSString) -> Void = { (message: NSString) in
+            print("JS: \(String(describing: message))")
         }
-        jsContext.objectForKeyedSubscript("console").setObject(unsafeBitCast(logFunction, to: AnyObject.self), forKeyedSubscript:"print" as (NSCopying & NSObjectProtocol)!)
-        
+        jsContext
+            .objectForKeyedSubscript("console")
+            .setObject(
+                unsafeBitCast(logFunction, to: AnyObject.self),
+                forKeyedSubscript:"print" as (NSCopying & NSObjectProtocol)
+            )
+
         // Support for window.location('myNewURL')!
         jsContext.evaluateScript("var window = { location: function (i) { window.goto(i) } }")
         
-        let goTo: @convention(block) (NSString!) -> Void = { (message:NSString!) in
-            
-            print("GOTO: \(message!)")
+        let goTo: @convention(block) (NSString) -> Void = { (message: NSString) in
+
+            print("GOTO: \(message)")
             
             let App = TVApplicationControllerContext()
             
-            if let javaScriptApplicationURL = URL(string: "\(message!)") {
+            if let javaScriptApplicationURL = URL(string: "\(message)") {
                 App.javaScriptApplicationURL = javaScriptApplicationURL
             }
+
             DispatchQueue.main.async {
-                self.appController = TVApplicationController(context: App, window: self.window, delegate: self)
+                self.appController = TVApplicationController(
+                    context: App,
+                    window: self.window,
+                    delegate: self
+                )
             }
         }
         
-        jsContext.objectForKeyedSubscript("window").setObject(unsafeBitCast(goTo, to: AnyObject.self), forKeyedSubscript:"goto" as (NSCopying & NSObjectProtocol)!)
+        jsContext.objectForKeyedSubscript("window")
+            .setObject(
+                unsafeBitCast(goTo, to: AnyObject.self),
+                forKeyedSubscript:"goto" as (NSCopying & NSObjectProtocol)
+            )
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

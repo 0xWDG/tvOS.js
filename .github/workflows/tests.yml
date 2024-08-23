@@ -1,0 +1,23 @@
+name: Run tests on Linux and macOS
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test_linux:
+    if: false
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Swift test
+        run: swift test
+
+  test_macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Swift test
+        run: swift test

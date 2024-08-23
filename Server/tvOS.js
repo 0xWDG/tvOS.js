@@ -10,18 +10,18 @@
 //
 // tvOS.js
 // (c) Wesley de Groot
-// Licence: CC BY 4.0
+// Licence: MIT
 //
 // Please see:
-// - https://github.com/wdg/tvOS.js
-// - https://www.wdgwv.com
+// - https://github.com/0xWDG/tvOS.js
+// - https://wesleydegroot.nl
 
 // * tvOS empty function
 // *
 // * If it is missing (es-lint)
 // *
 // * @var function func
-var func = function () { }
+var func = function () {};
 // DO NOT CREATE EMPTY FUNCTIONS PLEASE USE func instead
 // (for Function list/description generator)
 // Thanks.
@@ -32,8 +32,8 @@ var func = function () { }
 // *
 // * @var object XMLHttpRequest
 
-if (typeof XMLHttpRequest === 'undefined') {
-  var XMLHttpRequest = {}
+if (typeof XMLHttpRequest === "undefined") {
+  var XMLHttpRequest = {};
 }
 
 // * tvOS Storage Library
@@ -41,15 +41,15 @@ if (typeof XMLHttpRequest === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object Storage
-if (typeof Storage === 'undefined') {
+if (typeof Storage === "undefined") {
   var Storage = {
     clear: func,
     getItem: func,
     key: func,
     length: func,
     removeItem: func,
-    setItem: func
-  }
+    setItem: func,
+  };
 }
 
 // * tvOS MediaItem Library
@@ -57,7 +57,7 @@ if (typeof Storage === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object MediaItem
-if (typeof MediaItem === 'undefined') {
+if (typeof MediaItem === "undefined") {
   var MediaItem = {
     MediaItem: func,
     contentRatingDomain: func,
@@ -74,8 +74,8 @@ if (typeof MediaItem === 'undefined') {
     resumeTime: func,
     loadAssetID: func,
     loadCertificate: func,
-    loadKey: func
-  }
+    loadKey: func,
+  };
 }
 
 // * tvOS Restrictions Library
@@ -83,14 +83,14 @@ if (typeof MediaItem === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object Restrictions
-if (typeof Restrictions === 'undefined') {
+if (typeof Restrictions === "undefined") {
   var Restrictions = {
     allowsExplicit: null,
     maxMovieRank: null,
     maxMovieRatingForCountry: null,
     maxTVShowRank: null,
-    maxTVShowRatingForCountry: null
-  }
+    maxTVShowRatingForCountry: null,
+  };
 }
 
 // * tvOS Settings Library
@@ -98,13 +98,13 @@ if (typeof Restrictions === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object Settings
-if (typeof Settings === 'undefined') {
+if (typeof Settings === "undefined") {
   var Settings = {
     restrictions: null,
-    language: 'en-EN', // if debugging in browser then always english.
+    language: "en-EN", // if debugging in browser then always english.
     onRestrictionsChange: null,
-    storefrontCountryCode: null
-  }
+    storefrontCountryCode: null,
+  };
 }
 
 // * tvOS TVError Library
@@ -112,13 +112,13 @@ if (typeof Settings === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object TVError
-if (typeof TVError === 'undefined') {
+if (typeof TVError === "undefined") {
   var TVError = {
     code: null,
     description: null,
     domain: null,
-    userInfo: null
-  }
+    userInfo: null,
+  };
 }
 
 // * tvOS Player Library
@@ -126,7 +126,7 @@ if (typeof TVError === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object Player
-if (typeof Player === 'undefined') {
+if (typeof Player === "undefined") {
   var Player = {
     overlayDocument: func,
     Player: func,
@@ -149,8 +149,8 @@ if (typeof Player === 'undefined') {
     stateWillChange: func,
     timeBoundaryDidCross: func,
     timeDidChange: func,
-    timedMetadata: func
-  }
+    timedMetadata: func,
+  };
 }
 
 // * tvOS DOMParser Library
@@ -158,10 +158,10 @@ if (typeof Player === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object DOMParser
-if (typeof DOMParser === 'undefined') {
+if (typeof DOMParser === "undefined") {
   var DOMParser = {
-    parseFromString: func
-  }
+    parseFromString: func,
+  };
 }
 
 // * tvOS Playlist Library
@@ -169,15 +169,15 @@ if (typeof DOMParser === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object Playlist
-if (typeof Playlist === 'undefined') {
+if (typeof Playlist === "undefined") {
   var Playlist = {
     item: func,
     length: null,
     Playlist: func,
     pop: func,
     push: func,
-    splice: func
-  }
+    splice: func,
+  };
 }
 
 // * tvOS MenuBarDocument Library
@@ -185,12 +185,12 @@ if (typeof Playlist === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object MenuBarDocument
-if (typeof MenuBarDocument === 'undefined') {
+if (typeof MenuBarDocument === "undefined") {
   var MenuBarDocument = {
     getDocument: func,
     setDocument: func,
-    setSelectedItem: func
-  }
+    setSelectedItem: func,
+  };
 }
 
 // * tvOS navigationDocument Library
@@ -198,7 +198,7 @@ if (typeof MenuBarDocument === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object navigationDocument
-if (typeof navigationDocument === 'undefined') {
+if (typeof navigationDocument === "undefined") {
   var navigationDocument = {
     insertBeforeDocument: null,
     pushDocument: null,
@@ -210,8 +210,8 @@ if (typeof navigationDocument === 'undefined') {
     popDocument: null,
     popToDocument: null,
     popToRootDocument: null,
-    removeDocument: null
-  }
+    removeDocument: null,
+  };
 }
 
 // * tvOS Keyboard Library
@@ -219,11 +219,11 @@ if (typeof navigationDocument === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object Keyboard
-if (typeof Keyboard === 'undefined') {
+if (typeof Keyboard === "undefined") {
   var Keyboard = {
     text: null,
-    onTextChange: func
-  }
+    onTextChange: func,
+  };
 }
 
 // * tvOS App Library
@@ -231,13 +231,13 @@ if (typeof Keyboard === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object App
-if (typeof App === 'undefined') {
+if (typeof App === "undefined") {
   var App = {
     onError: null,
     onLaunch: null,
     onExit: null,
-    reload: func
-  }
+    reload: func,
+  };
 }
 
 // * tvOS Device Library
@@ -245,15 +245,15 @@ if (typeof App === 'undefined') {
 // * If it is missing (es-lint)
 // *
 // * @var object Device
-if (typeof Device === 'undefined') {
+if (typeof Device === "undefined") {
   var Device = {
     systemVersion: null,
     appVersion: null,
     appIdentifier: null,
     model: null,
     productType: null,
-    vendorIdentifier: null
-  }
+    vendorIdentifier: null,
+  };
 }
 
 // * tvOS Checker.
@@ -263,16 +263,19 @@ if (typeof Device === 'undefined') {
 // *
 // * @var object console
 // * @var object window
-if (typeof console === 'undefined' || typeof window === 'undefined') {
+if (typeof console === "undefined" || typeof window === "undefined") {
   // Create a alert, i'm missing my special code!
-  var parser = new DOMParser()
-  var alertDoc = parser.parseFromString('<?xml version="1.0" encoding="UTF-8" ?><document>' +
-    '<alertTemplate><title>ALERT</title><description>I am missing some special code.<br />' +
-    'Please see: https://github.com/wdg/tvOS.js</description>`</alertTemplate></document>', 'application/xml')
-  navigationDocument.presentModal(alertDoc)
+  var parser = new DOMParser();
+  var alertDoc = parser.parseFromString(
+    '<?xml version="1.0" encoding="UTF-8" ?><document>' +
+      "<alertTemplate><title>ALERT</title><description>I am missing some special code.<br />" +
+      "Please see: https://github.com/wdg/tvOS.js</description>`</alertTemplate></document>",
+    "application/xml"
+  );
+  navigationDocument.presentModal(alertDoc);
 
-  var console = {log: func}
-  var window = {location: func}
+  var console = { log: func };
+  var window = { location: func };
 }
 
 // * tvOS Library
@@ -281,16 +284,15 @@ if (typeof console === 'undefined' || typeof window === 'undefined') {
 // *
 // * @var object tvOS
 var tvOS = {
-
   // * tvOS.windows
   // *
   // * Wich windows are loaded?
   // *
   // * @var object windows
   windows: {
-    windowActive: '',
+    windowActive: "",
     alertActive: false,
-    loadingActive: false
+    loadingActive: false,
   },
 
   // * tvOS.window
@@ -308,10 +310,10 @@ var tvOS = {
   // *
   // * @var object js
   js: {
-    version: '0.0.5',
-    date: '01-DEC-2015',
-    release: 'beta',
-    url: 'http://localhost:9001/tvOS.js'
+    version: "0.0.5",
+    date: "01-DEC-2015",
+    release: "beta",
+    url: "https://0xwdg.github.io/tvOS.js/tvOS.js",
   },
 
   // * tvOS.version
@@ -369,70 +371,75 @@ var tvOS = {
   // *
   // * @var string translations
   translations: {
-    en: { // English
-      language: 'English',
-      next: 'Next',
-      previous: 'Previous',
-      loading: 'Loading',
-      title: 'Title',
-      description: 'Description',
-      help: 'Help',
-      subtitle: 'Subtitle',
-      again: 'Again',
-      yes: 'Yes',
-      no: 'No'
+    en: {
+      // English
+      language: "English",
+      next: "Next",
+      previous: "Previous",
+      loading: "Loading",
+      title: "Title",
+      description: "Description",
+      help: "Help",
+      subtitle: "Subtitle",
+      again: "Again",
+      yes: "Yes",
+      no: "No",
     },
-    nl: { // Dutch
-      language: 'Nederlands',
-      next: 'Volgende',
-      previous: 'Vorige',
-      loading: 'Laden',
-      title: 'Titel',
-      description: 'Beschrijving',
-      help: 'Help',
-      subtitle: 'Onderschrift',
-      again: 'Overnieuw',
-      yes: 'Ja',
-      no: 'Nee'
+    nl: {
+      // Dutch
+      language: "Nederlands",
+      next: "Volgende",
+      previous: "Vorige",
+      loading: "Laden",
+      title: "Titel",
+      description: "Beschrijving",
+      help: "Help",
+      subtitle: "Onderschrift",
+      again: "Overnieuw",
+      yes: "Ja",
+      no: "Nee",
     },
-    fy: { // Frisian (Dutch)
-      language: 'Frysk',
-      next: 'Folgjende',
-      previous: 'Foarige',
-      loading: 'Laden',
-      title: 'Titel',
-      description: 'Beskriuwing',
-      help: 'Help',
-      subtitle: 'ûnderskrift',
-      again: 'Oernij',
-      yes: 'Ja',
-      no: 'Nee'
+    fy: {
+      // Frisian (Dutch)
+      language: "Frysk",
+      next: "Folgjende",
+      previous: "Foarige",
+      loading: "Laden",
+      title: "Titel",
+      description: "Beskriuwing",
+      help: "Help",
+      subtitle: "ûnderskrift",
+      again: "Oernij",
+      yes: "Ja",
+      no: "Nee",
     },
-    fr: { // French
-      language: 'Français',
-      next: 'Prochaine',
-      previous: 'Antérieur',
-      loading: 'Charge',
-      title: 'Titre',
-      description: 'Description',
-      help: 'Aide',
-      subtitle: 'Légende',
-      again: 'À propos de New',
-      yes: 'Oui',
-      no: 'Non'
+    fr: {
+      // French
+      language: "Français",
+      next: "Prochaine",
+      previous: "Antérieur",
+      loading: "Charge",
+      title: "Titre",
+      description: "Description",
+      help: "Aide",
+      subtitle: "Légende",
+      again: "À propos de New",
+      yes: "Oui",
+      no: "Non",
     },
-    de: { // German
-      language: 'Deutsch',
-      next: 'Weiter',
-      previous: 'Zurück',
-      loading: 'Laden',
-      title: 'Titel',
-      description: 'Bezeichnung',
-      help: 'Hilfe',
-      subtitle: 'Bildunterschrift',
-      yes: 'Ja',
-      no: 'Nein'
-    }
+    de: {
+      // German
+      language: "Deutsch",
+      next: "Weiter",
+      previous: "Zurück",
+      loading: "Laden",
+      title: "Titel",
+      description: "Bezeichnung",
+      help: "Hilfe",
+      subtitle: "Bildunterschrift",
+      yes: "Ja",
+      no: "Nein",
+    },
   },
 
   // * tvOS.lang
@@ -440,7 +447,7 @@ var tvOS = {
   // * The universal language
   // *
   // * @var string lang
-  lang: Settings.language.split('-')[0].toLowerCase(),
+  lang: Settings.language.split("-")[0].toLowerCase(),
 
   // * tvOS.device
   // *
@@ -495,7 +502,7 @@ var tvOS = {
     // * The universally unique identifier (UUID) of the device.
     // *
     // * @var string vendorIdentifier
-    uuid: Device.vendorIdentifier
+    uuid: Device.vendorIdentifier,
   },
 
   // * tvOS.emoij
@@ -504,11 +511,11 @@ var tvOS = {
   // *
   // * @var object emoij
   emoij: {
-    nerd: '\uD83E\uDD13',
-    smilie: '\ud83d\ude03',
-    dsmilie: '\ud83d\ude00',
-    heart: '\u2764\ufe0f',
-    brokenheart: '\ud83d\udc94'
+    nerd: "\uD83E\uDD13",
+    smilie: "\ud83d\ude03",
+    dsmilie: "\ud83d\ude00",
+    heart: "\u2764\ufe0f",
+    brokenheart: "\ud83d\udc94",
   },
 
   /**
@@ -524,75 +531,86 @@ var tvOS = {
    */
   alert: function (title, description, buttons, callback) {
     // if no description, then make a empty description
-    if (typeof description === 'undefined') description = ' '
+    if (typeof description === "undefined") description = " ";
 
     // make the title 'safe'
-    title = this.safeString(title)
+    title = this.safeString(title);
 
     // make the description 'safe'
-    description = this.safeString(description)
+    description = this.safeString(description);
 
     // @var string alertString
     var alertString = `<?xml version="1.0" encoding="UTF-8" ?>
     <document>
      <alertTemplate>
       <title>${title}</title>
-      <description>${description}</description>`
+      <description>${description}</description>`;
 
     // if no buttons, then create a 'ok' button.
-    if (typeof buttons !== 'object') buttons = ['ok']
+    if (typeof buttons !== "object") buttons = ["ok"];
 
     // Otherwise parse the buttons
     for (var i = 0; i < buttons.length; i++) {
       // walk through the buttons and create them
       // @var string alertString
-      alertString += `<button>
-       <text>` + this.translate(this.safeString(buttons[i])) + `</text>
-      </button>` // Auto translate, if exists!
+      alertString +=
+        `<button>
+       <text>` +
+        this.translate(this.safeString(buttons[i])) +
+        `</text>
+      </button>`; // Auto translate, if exists!
     }
 
     // @var string alertString
     alertString += `</alertTemplate>
-    </document>`
+    </document>`;
 
     // Create a DOM Parser
-    var parser = new DOMParser()
+    var parser = new DOMParser();
 
     // Create the document
-    var alertDoc = parser.parseFromString(alertString, 'application/xml')
+    var alertDoc = parser.parseFromString(alertString, "application/xml");
 
     // if there is a callback then...
-    if (typeof callback !== 'undefined') {
-      alertDoc.addEventListener('select', function (e) {
-        // Fix nasty return
-        var pressed = e.target.innerHTML
-        pressed = pressed.split('>')[1]
-        pressed = pressed.split('<')[0]
+    if (typeof callback !== "undefined") {
+      alertDoc.addEventListener(
+        "select",
+        function (e) {
+          // Fix nasty return
+          var pressed = e.target.innerHTML;
+          pressed = pressed.split(">")[1];
+          pressed = pressed.split("<")[0];
 
-        // Human readable!
-        // call the callback
-        callback(pressed)
-      }, false)
+          // Human readable!
+          // call the callback
+          callback(pressed);
+        },
+        false
+      );
     } else {
-      alertDoc.addEventListener('select', function (e) {
-        var pressed = e.target.innerHTML
-        pressed = pressed.split('>')[1]
-        pressed = pressed.split('<')[0]
-        // OTHERWISE DISMISS WHEN CLICKED ON A BUTTON
-        navigationDocument.dismissModal(alertDoc)
-        tvOS.windows.alertActive = false
-        return pressed
-      }, false)
+      alertDoc.addEventListener(
+        "select",
+        function (e) {
+          var pressed = e.target.innerHTML;
+          pressed = pressed.split(">")[1];
+          pressed = pressed.split("<")[0];
+          // OTHERWISE DISMISS WHEN CLICKED ON A BUTTON
+          navigationDocument.dismissModal(alertDoc);
+          tvOS.windows.alertActive = false;
+          return pressed;
+        },
+        false
+      );
     }
 
     // Present the alert window
-    navigationDocument.presentModal(alertDoc)
+    navigationDocument.presentModal(alertDoc);
 
     // Wich window is active
-    this.windows.windowActive = alertDoc
+    this.windows.windowActive = alertDoc;
 
     // Is there a alert active?
-    this.windows.alertActive = true
+    this.windows.alertActive = true;
   },
 
   /**
@@ -605,9 +623,9 @@ var tvOS = {
    */
   removeOldDocument: function () {
     // If there is at least one window active, then remove it
-    if (this.windows.windowActive !== '') {
+    if (this.windows.windowActive !== "") {
       // Removing window
-      navigationDocument.dismissModal(this.windows.windowActive)
+      navigationDocument.dismissModal(this.windows.windowActive);
     }
   },
 
@@ -620,7 +638,7 @@ var tvOS = {
    */
   reload: function () {
     // Reload the application
-    App.reload()
+    App.reload();
   },
 
   /**
@@ -636,7 +654,7 @@ var tvOS = {
     // remove all unnecessary HTML Tags from a string
     // @var string str
     // @return string without HTML Tags
-    return str.replace(/<\/?[^>]+(>|$)/g, '')
+    return str.replace(/<\/?[^>]+(>|$)/g, "");
   },
 
   /**
@@ -650,14 +668,14 @@ var tvOS = {
   makeDocument: function (resource) {
     if (!tvOS.parser) {
       // is there no parser? then create it.
-      tvOS.parser = new DOMParser()
+      tvOS.parser = new DOMParser();
     }
 
     // Parse the document
-    var doc = tvOS.parser.parseFromString(resource, 'application/xml')
+    var doc = tvOS.parser.parseFromString(resource, "application/xml");
 
     // Return the brand new document
-    return doc
+    return doc;
   },
 
   /**
@@ -670,7 +688,7 @@ var tvOS = {
    */
   dummy: function () {
     // This will do... nothing.
-    return true
+    return true;
   },
 
   /**
@@ -684,24 +702,28 @@ var tvOS = {
    */
   showLoadingIndicator: function (text, presentation) {
     // First remove the old document
-    this.removeOldDocument()
+    this.removeOldDocument();
 
     // if there is no text then replace it with 'Loading'
-    if (typeof text === 'undefined') {
+    if (typeof text === "undefined") {
       // And translate it
-      text = tvOS.translate('loading')
+      text = tvOS.translate("loading");
     }
 
     if (!this.windows.loadingIndicator) {
-      this.loadingIndicator = this.makeDocument(this.loadingTemplate.replace('%s', tvOS.translate(text)))
-      this.windows.windowActive = this.loadingIndicator
+      this.loadingIndicator = this.makeDocument(
+        this.loadingTemplate.replace("%s", tvOS.translate(text))
+      );
+      this.windows.windowActive = this.loadingIndicator;
     }
 
-    if (!this.windows.loadingIndicator &&
-        presentation !== 'modalDialogPresenter' &&
-        presentation !== 'menuBarItemPresenter') {
-      navigationDocument.pushDocument(this.loadingIndicator)
-      this.windows.loadingIndicator = true
+    if (
+      !this.windows.loadingIndicator &&
+      presentation !== "modalDialogPresenter" &&
+      presentation !== "menuBarItemPresenter"
+    ) {
+      navigationDocument.pushDocument(this.loadingIndicator);
+      this.windows.loadingIndicator = true;
     }
   },
 
@@ -714,9 +736,9 @@ var tvOS = {
    */
   removeLoadingIndicator: function () {
     if (this.windows.loadingIndicator) {
-      navigationDocument.removeDocument(this.loadingIndicator)
-      this.removeOldDocument()
-      this.windows.loadingIndicator = false
+      navigationDocument.removeDocument(this.loadingIndicator);
+      this.removeOldDocument();
+      this.windows.loadingIndicator = false;
     }
   },
 
@@ -729,12 +751,12 @@ var tvOS = {
    * @example tvOS.log(object)
    */
   log: function (object) {
-    if (typeof object === 'object') {
+    if (typeof object === "object") {
       for (var i in object) {
-        console.log('[log] ' + i + ' = ' + object[i])
+        console.log("[log] " + i + " = " + object[i]);
       }
     } else {
-      console.log(object)
+      console.log(object);
     }
   },
 
@@ -746,7 +768,7 @@ var tvOS = {
    * @example tvOS.dismiss()
    */
   dismiss: function () {
-    this.removeOldDocument() // Shortcut :)
+    this.removeOldDocument(); // Shortcut :)
   },
 
   /**
@@ -760,16 +782,16 @@ var tvOS = {
    * @example tvOS.load(event)
    */
   load: function (event) {
-    var ele = event.target
+    var ele = event.target;
     // var templateURL = ele.getAttribute('template')
     // var presentation = ele.getAttribute('presentation')
-    if (typeof event.target.getAttribute('presentation') === 'string') {
+    if (typeof event.target.getAttribute("presentation") === "string") {
       try {
-        var clicked = ele.childNodes.item(0).innerHTML.replace('\'', '\\\'')
-        eval(event.target.getAttribute('presentation') + '(\'' + clicked + '\')') //eslint-disable-line
+        var clicked = ele.childNodes.item(0).innerHTML.replace("'", "\\'");
+        eval(event.target.getAttribute("presentation") + "('" + clicked + "')"); //eslint-disable-line
       } catch (err) {
-        console.log('Error with callback')
-        console.log(err)
+        console.log("Error with callback");
+        console.log(err);
       }
     }
   },
@@ -783,7 +805,7 @@ var tvOS = {
    * @example tvOS.display(view)
    */
   display: function (view) {
-    navigationDocument.pushDocument(view)
+    navigationDocument.pushDocument(view);
   },
 
   /**
@@ -797,98 +819,118 @@ var tvOS = {
    * @example tvOS.listView(title, list, banner)
    */
   listView: function (title, list, banner, height, width) {
-    if (typeof width === 'undefined') width = '1920'
-    if (typeof height === 'undefined') height = '360'
+    if (typeof width === "undefined") width = "1920";
+    if (typeof height === "undefined") height = "360";
 
-    if (typeof banner === 'undefined') {
-      banner = ''
+    if (typeof banner === "undefined") {
+      banner = "";
     } else {
       banner = `<banner>
         <background>
           <img src="${banner}" width="${width}" height="${height}" />
         </background>
-      </banner>`
+      </banner>`;
     }
 
-    var temp = tvOS.ListViewTemplate_before.replace('tvOS_title', this.safeString(title))
-      .replace('tvOS_banner', (banner))
+    var temp = tvOS.ListViewTemplate_before.replace(
+      "tvOS_title",
+      this.safeString(title)
+    ).replace("tvOS_banner", banner);
 
-    if (typeof list === 'object') {
+    if (typeof list === "object") {
       for (var i = 0; i < list.length; i++) {
-        if (typeof list[i]['subtitle'] !== 'undefined') { // subtitle
-          list[i]['subtitle'] = '<subtitle>' + this.safeString(list[i]['subtitle']) + '</subtitle>'
+        if (typeof list[i]["subtitle"] !== "undefined") {
+          // subtitle
+          list[i]["subtitle"] =
+            "<subtitle>" + this.safeString(list[i]["subtitle"]) + "</subtitle>";
         }
 
-        if (typeof list[i]['image_height'] === 'undefined') list[i]['image_height'] = 482
-        if (typeof list[i]['image_width'] === 'undefined') list[i]['image_width'] = 857
+        if (typeof list[i]["image_height"] === "undefined")
+          list[i]["image_height"] = 482;
+        if (typeof list[i]["image_width"] === "undefined")
+          list[i]["image_width"] = 857;
 
-        if (typeof list[i]['image'] !== 'undefined') {
-          list[i]['image'] = '<img src="' + (list[i]['image']) + '" ' +
-                             'width="' + list[i]['image_width'] + '" ' +
-                             'height="' + list[i]['image_height'] + '" />' // TV ignores w+h.
+        if (typeof list[i]["image"] !== "undefined") {
+          list[i]["image"] =
+            '<img src="' +
+            list[i]["image"] +
+            '" ' +
+            'width="' +
+            list[i]["image_width"] +
+            '" ' +
+            'height="' +
+            list[i]["image_height"] +
+            '" />'; // TV ignores w+h.
         }
 
-        temp += tvOS.ListViewTemplate_while.replace('tvOS_title', (
-          (typeof list[i]['title'] !== 'undefined')
-            ? this.safeString(list[i]['title'])
-            : 'Help'
-        ))
-          .replace('tvOS_title', (
-            (typeof list[i]['title'] !== 'undefined')
-              ? this.safeString(list[i]['title'])
-              : 'Help'
-          ))
-          .replace('tvOS_description', (
-            (typeof list[i]['description'] !== 'undefined')
-              ? this.safeString(list[i]['description'])
-              : ''
-          ))
-          .replace('tvOS_subtitle', (
-            (typeof list[i]['subtitle'] !== 'undefined')
-              ? list[i]['subtitle']
-              : ''
-          ))
-          .replace('tvOS_subtitle', (
-            (typeof list[i]['subtitle'] !== 'undefined')
-              ? list[i]['subtitle']
-              : ''
-          ))
-          .replace('tvOS_action', (
-            (typeof list[i]['action'] !== 'undefined')
-              ? this.safeString(list[i]['action'])
-              : 'tvOS._error'
-          ))
-          .replace('tvOS_image', (
-            (typeof list[i]['image'] !== 'undefined')
-              ? (list[i]['image'])
-              : ''
-          ))
-          .replace('tvOS_template', (
-            (typeof list[i]['template'] !== 'undefined')
-              ? this.safeString(list[i]['template'])
-              : 'none'
-          ))
-          .replace('tvOS_helpText', (
-            (typeof list[i]['accessibilityText'] !== 'undefined')
-              ? this.safeString(list[i]['accessibilityText'])
-              : 'No help available'
-          ))
+        temp += tvOS.ListViewTemplate_while.replace(
+          "tvOS_title",
+          typeof list[i]["title"] !== "undefined"
+            ? this.safeString(list[i]["title"])
+            : "Help"
+        )
+          .replace(
+            "tvOS_title",
+            typeof list[i]["title"] !== "undefined"
+              ? this.safeString(list[i]["title"])
+              : "Help"
+          )
+          .replace(
+            "tvOS_description",
+            typeof list[i]["description"] !== "undefined"
+              ? this.safeString(list[i]["description"])
+              : ""
+          )
+          .replace(
+            "tvOS_subtitle",
+            typeof list[i]["subtitle"] !== "undefined"
+              ? list[i]["subtitle"]
+              : ""
+          )
+          .replace(
+            "tvOS_subtitle",
+            typeof list[i]["subtitle"] !== "undefined"
+              ? list[i]["subtitle"]
+              : ""
+          )
+          .replace(
+            "tvOS_action",
+            typeof list[i]["action"] !== "undefined"
+              ? this.safeString(list[i]["action"])
+              : "tvOS._error"
+          )
+          .replace(
+            "tvOS_image",
+            typeof list[i]["image"] !== "undefined" ? list[i]["image"] : ""
+          )
+          .replace(
+            "tvOS_template",
+            typeof list[i]["template"] !== "undefined"
+              ? this.safeString(list[i]["template"])
+              : "none"
+          )
+          .replace(
+            "tvOS_helpText",
+            typeof list[i]["accessibilityText"] !== "undefined"
+              ? this.safeString(list[i]["accessibilityText"])
+              : "No help available"
+          );
       }
     } else {
-      temp += tvOS.ListViewTemplate_while.replace('tvOS_title', 'Help')
-        .replace('tvOS_title', 'Help')
-        .replace('tvOS_description', 'Please read the manual')
-        .replace('tvOS_action', 'tvOS._error')
-        .replace('tvOS_image', 'https://www.wdgwv.com/logo.png')
-        .replace('tvOS_template', 'none')
-        .replace('tvOS_helpText', 'Error')
+      temp += tvOS.ListViewTemplate_while.replace("tvOS_title", "Help")
+        .replace("tvOS_title", "Help")
+        .replace("tvOS_description", "Please read the manual")
+        .replace("tvOS_action", "tvOS._error")
+        .replace("tvOS_image", "https://www.wdgwv.com/logo.png")
+        .replace("tvOS_template", "none")
+        .replace("tvOS_helpText", "Error");
     }
 
-    temp += tvOS.ListViewTemplate_after
+    temp += tvOS.ListViewTemplate_after;
 
-    temp = this.makeDocument(temp)
-    temp.addEventListener('select', tvOS.load.bind(tvOS))
-    this.display(temp)
+    temp = this.makeDocument(temp);
+    temp.addEventListener("select", tvOS.load.bind(tvOS));
+    this.display(temp);
   },
 
   /**
@@ -906,21 +948,23 @@ var tvOS = {
    */
   RatingView: function (title, rating, callback) {
     // Create a temporary empty string.
-    var temp = ''
+    var temp = "";
 
     // Parse the template Rating View
-    temp += tvOS.TemplateRatingView.replace('tvOS_title', this.safeString(title))
-      .replace('tvOS_rating', rating)
+    temp += tvOS.TemplateRatingView.replace(
+      "tvOS_title",
+      this.safeString(title)
+    ).replace("tvOS_rating", rating);
 
     // Create the document..
-    temp = tvOS.makeDocument(temp)
+    temp = tvOS.makeDocument(temp);
 
-    temp.addEventListener('change', function (e) {
-      callback(String(e.value)) // Force to be a string.
-    })
+    temp.addEventListener("change", function (e) {
+      callback(String(e.value)); // Force to be a string.
+    });
 
     // Display the RatingView
-    tvOS.display(temp)
+    tvOS.display(temp);
   },
 
   /**
@@ -940,26 +984,26 @@ var tvOS = {
    * @example tvOS.toStar('0.8')
    */
   toStar: function (valToStar) {
-    valToStar = String(valToStar)
-    var filledStar = '★'
-    var emptyStar = '☆'
-    var stars = emptyStar + emptyStar + emptyStar + emptyStar + emptyStar
+    valToStar = String(valToStar);
+    var filledStar = "★";
+    var emptyStar = "☆";
+    var stars = emptyStar + emptyStar + emptyStar + emptyStar + emptyStar;
 
-    if (valToStar === '0.2') {
-      stars = filledStar + emptyStar + emptyStar + emptyStar + emptyStar
-    } else if (valToStar === '0.4') {
-      stars = filledStar + filledStar + emptyStar + emptyStar + emptyStar
-    } else if (valToStar === '0.6') {
-      stars = filledStar + filledStar + filledStar + emptyStar + emptyStar
-    } else if (valToStar === '0.8') {
-      stars = filledStar + filledStar + filledStar + filledStar + emptyStar
-    } else if (valToStar === '1' || valToStar === '1') {
-      stars = filledStar + filledStar + filledStar + filledStar + filledStar
+    if (valToStar === "0.2") {
+      stars = filledStar + emptyStar + emptyStar + emptyStar + emptyStar;
+    } else if (valToStar === "0.4") {
+      stars = filledStar + filledStar + emptyStar + emptyStar + emptyStar;
+    } else if (valToStar === "0.6") {
+      stars = filledStar + filledStar + filledStar + emptyStar + emptyStar;
+    } else if (valToStar === "0.8") {
+      stars = filledStar + filledStar + filledStar + filledStar + emptyStar;
+    } else if (valToStar === "1" || valToStar === "1") {
+      stars = filledStar + filledStar + filledStar + filledStar + filledStar;
     } else {
-      stars = emptyStar + emptyStar + emptyStar + emptyStar + emptyStar
+      stars = emptyStar + emptyStar + emptyStar + emptyStar + emptyStar;
     }
 
-    return String(stars)
+    return String(stars);
   },
 
   /**
@@ -979,20 +1023,20 @@ var tvOS = {
    * @example tvOS.toHuman('0.8')
    */
   toHuman: function (valtoHuman) {
-    valtoHuman = String(valtoHuman)
+    valtoHuman = String(valtoHuman);
 
-    if (valtoHuman === '0.2') {
-      return String('1/5')
-    } else if (valtoHuman === '0.4') {
-      return String('2/5')
-    } else if (valtoHuman === '0.6') {
-      return String('3/5')
-    } else if (valtoHuman === '0.8') {
-      return String('4/5')
-    } else if (valtoHuman === '1' || valtoHuman === '1') {
-      return String('5/5')
+    if (valtoHuman === "0.2") {
+      return String("1/5");
+    } else if (valtoHuman === "0.4") {
+      return String("2/5");
+    } else if (valtoHuman === "0.6") {
+      return String("3/5");
+    } else if (valtoHuman === "0.8") {
+      return String("4/5");
+    } else if (valtoHuman === "1" || valtoHuman === "1") {
+      return String("5/5");
     } else {
-      return String('0/5')
+      return String("0/5");
     }
   },
 
@@ -1007,12 +1051,16 @@ var tvOS = {
    */
   parseRSS: function (url, callback) {
     // Parse using google api's
-    tvOS.ajax('https://www.wdgwv.com/XML2JSON.php?feed=' + url + '&num=20', 'GET', function (data) {
-      // Parse the JSON To object
-      data = JSON.parse(data)
-      // Callback & Done.
-      callback(data)
-    })
+    tvOS.ajax(
+      "https://www.wdgwv.com/XML2JSON.php?feed=" + url + "&num=20",
+      "GET",
+      function (data) {
+        // Parse the JSON To object
+        data = JSON.parse(data);
+        // Callback & Done.
+        callback(data);
+      }
+    );
   },
 
   /**
@@ -1030,7 +1078,7 @@ var tvOS = {
    */
   CompilationView: function (title, subtitle, text, image, items, buttons) {
     // Trigger this.compilation(title, subtitle, text, image, items, buttons)
-    this.Compilation(title, subtitle, text, image, items, buttons)
+    this.Compilation(title, subtitle, text, image, items, buttons);
   },
 
   /**
@@ -1048,98 +1096,106 @@ var tvOS = {
    */
   Compilation: function (title, subtitle, text, image, items, buttons) {
     // Create a temporary empty string.
-    var temp = ''
+    var temp = "";
 
     // Create a temporary empty string for the buttons.
-    var _buttons = ''
+    var _buttons = "";
 
     // If there are buttons then loop through it.
-    if (typeof buttons !== 'undefined') {
+    if (typeof buttons !== "undefined") {
       for (var b = 0; b < buttons.length; b++) {
         // Add the button to the temporary string
         _buttons += `<buttonLockup>
-                       <badge src="${buttons[b]['image']}" class="whiteButton" />
-                       <title>${buttons[b]['title']}</title>
-                     </buttonLockup>`
+                       <badge src="${buttons[b]["image"]}" class="whiteButton" />
+                       <title>${buttons[b]["title"]}</title>
+                     </buttonLockup>`;
       }
     }
 
     // Parse the CompilationView (BEFORE) Part
-    temp += tvOS.CompilationView_before.replace('tvOS_title', this.safeString(title))
-      .replace('tvOS_image', image)
-      .replace('tvOS_subtitle', this.safeString(subtitle))
-      .replace('tvOS_text', this.safeString(text))
-      .replace('tvOS_buttons', _buttons)
+    temp += tvOS.CompilationView_before.replace(
+      "tvOS_title",
+      this.safeString(title)
+    )
+      .replace("tvOS_image", image)
+      .replace("tvOS_subtitle", this.safeString(subtitle))
+      .replace("tvOS_text", this.safeString(text))
+      .replace("tvOS_buttons", _buttons);
 
     // If there is something weird (no items) then display a Error object.
-    if (typeof items !== 'object') {
-      items = [{
-        title: 'Error',
-        subtitle: 'Please read the readme',
-        decoration: this.emoij.nerd
-      }]
+    if (typeof items !== "object") {
+      items = [
+        {
+          title: "Error",
+          subtitle: "Please read the readme",
+          decoration: this.emoij.nerd,
+        },
+      ];
     }
 
     // Loop Through the items
     for (var i = 0; i < items.length; i++) {
       // Add the (while) part of the CompilationView
-      temp += tvOS.CompilationView_while.replace('tvOS_title', (
-        (typeof items[i]['title'] !== 'undefined')
-          ? this.safeString(items[i]['title'])
-          : 'Error'
-      )) // Parse the title
-        .replace('tvOS_subtitle', (
-          (typeof items[i]['subtitle'] !== 'undefined')
-            ? this.safeString(items[i]['subtitle'])
-            : ' '
-        )) // Parse the subtitle
-        .replace('tvOS_decoration', (
-          (typeof items[i]['decoration'] !== 'undefined')
-            ? this.safeString(items[i]['decoration'])
-            : ' '
-        )) // Parse the decoration
-        .replace('tvOS_item', i + 1) // This one is for event(Callback) triggering
+      temp += tvOS.CompilationView_while.replace(
+        "tvOS_title",
+        typeof items[i]["title"] !== "undefined"
+          ? this.safeString(items[i]["title"])
+          : "Error"
+      ) // Parse the title
+        .replace(
+          "tvOS_subtitle",
+          typeof items[i]["subtitle"] !== "undefined"
+            ? this.safeString(items[i]["subtitle"])
+            : " "
+        ) // Parse the subtitle
+        .replace(
+          "tvOS_decoration",
+          typeof items[i]["decoration"] !== "undefined"
+            ? this.safeString(items[i]["decoration"])
+            : " "
+        ) // Parse the decoration
+        .replace("tvOS_item", i + 1); // This one is for event(Callback) triggering
     }
 
     // Add the footer
-    temp += tvOS.CompilationView_after
+    temp += tvOS.CompilationView_after;
 
     // Create the element
-    temp = tvOS.makeDocument(temp)
+    temp = tvOS.makeDocument(temp);
 
     // Create the event handler (listener)
-    temp.addEventListener('select', function (e) {
+    temp.addEventListener("select", function (e) {
       // [BEGIN] Make it human readable (and so code readable)
-      var pressed = e.target.innerHTML
-      pressed = pressed.split('<title')[1]
-      pressed = pressed.split('/title>')[0]
-      pressed = pressed.split('>')[1]
-      pressed = pressed.split('<')[0]
+      var pressed = e.target.innerHTML;
+      pressed = pressed.split("<title")[1];
+      pressed = pressed.split("/title>")[0];
+      pressed = pressed.split(">")[1];
+      pressed = pressed.split("<")[0];
       // [[END]] Make it human readable (and so code readable)
 
       // Parse the items
       for (var s = 0; s < items.length; s++) {
         // If the pressed action is a title then...
-        if (pressed === items[s]['title']) {
+        if (pressed === items[s]["title"]) {
           // Trigger the callback (yes looks funny)
-          items[s]['action'](pressed)
+          items[s]["action"](pressed);
         }
       }
 
       // Parse the buttons
-      if (typeof buttons !== 'undefined') {
+      if (typeof buttons !== "undefined") {
         for (var b = 0; b < buttons.length; b++) {
           // If the pressed action is a button then...
-          if (pressed === buttons[b]['title']) {
+          if (pressed === buttons[b]["title"]) {
             // Trigger the callback (yes also this one looks funny)
-            buttons[b]['action'](pressed)
+            buttons[b]["action"](pressed);
           }
         }
       }
-    })
+    });
 
     // Display the amazing content
-    tvOS.display(temp)
+    tvOS.display(temp);
   },
 
   /**
@@ -1158,67 +1214,80 @@ var tvOS = {
    * @example   console.log('Selected: ' + selected)
    * @example })
    */
-  searchView: function (search, results, items, callback_on_search, callback_on_select) {
-    var temp = ''
+  searchView: function (
+    search,
+    results,
+    items,
+    callback_on_search,
+    callback_on_select
+  ) {
+    var temp = "";
 
-    temp += tvOS.SearchView_before.replace('tvOS_search', this.safeString(search))
-      .replace('tvOS_results', results)
+    temp += tvOS.SearchView_before.replace(
+      "tvOS_search",
+      this.safeString(search)
+    ).replace("tvOS_results", results);
 
-    if (typeof items !== 'object') {
-      items = [{
-        title: 'Error',
-        image: 'https://www.wdgwv.com/logo.png'
-      }]
+    if (typeof items !== "object") {
+      items = [
+        {
+          title: "Error",
+          image: "https://www.wdgwv.com/logo.png",
+        },
+      ];
     }
 
     for (var i = 0; i < items.length; i++) {
-      temp += tvOS.SearchView_while.replace('tvOS_title', this.safeString(items[i]['title']))
-        .replace('tvOS_image', items[i]['image'])
+      temp += tvOS.SearchView_while.replace(
+        "tvOS_title",
+        this.safeString(items[i]["title"])
+      ).replace("tvOS_image", items[i]["image"]);
     }
 
-    temp += tvOS.SearchView_after
+    temp += tvOS.SearchView_after;
     //
     // Create DOM node
-    temp = tvOS.makeDocument(temp)
+    temp = tvOS.makeDocument(temp);
 
     // Get keyboard, it must be easier...
     // Description temp = dom node.
-    var textField = temp.childNodes.item(0) // {0: document}
+    var textField = temp.childNodes
+      .item(0) // {0: document}
       .childNodes.item(1) // {0: head, 1: searchTemplate}
-      .childNodes.item(0) // {0: searchField, 1: collectionList}
+      .childNodes.item(0); // {0: searchField, 1: collectionList}
     //
     // ok we'll finally got the good childnode, now get te Feature 'Keyboard'
-    var myKeyboard = textField.getFeature('Keyboard')
+    var myKeyboard = textField.getFeature("Keyboard");
     //
     // On text change callback_on_search(myKeyboard.text)
     myKeyboard.onTextChange = function () {
       // Is there a callback?
-      if (typeof callback_on_search === 'function') {
+      if (typeof callback_on_search === "function") {
         // Trigger the callback
-        callback_on_search(myKeyboard.text)
+        callback_on_search(myKeyboard.text);
       } else {
         // Otherwise console.log!
-        console.log('Search: ' + myKeyboard.text)
+        console.log("Search: " + myKeyboard.text);
       }
-    }
+    };
     // But...
     // When someone selects a search result...
-    temp.addEventListener('select', function (e) {
-      var pressed = e.target.innerHTML
-      pressed = pressed.split('<title')[1]
-      pressed = pressed.split('/title>')[0]
-      pressed = pressed.split('>')[1]
-      pressed = pressed.split('<')[0]
+    temp.addEventListener("select", function (e) {
+      var pressed = e.target.innerHTML;
+      pressed = pressed.split("<title")[1];
+      pressed = pressed.split("/title>")[0];
+      pressed = pressed.split(">")[1];
+      pressed = pressed.split("<")[0];
 
       // Is there a callback?
-      if (typeof callback_on_select === 'function') {
+      if (typeof callback_on_select === "function") {
         // Trigger the callback
-        callback_on_select(pressed)
+        callback_on_select(pressed);
       }
-    })
+    });
     //
     // Display!
-    tvOS.display(temp)
+    tvOS.display(temp);
   },
 
   /**
@@ -1230,14 +1299,18 @@ var tvOS = {
    * @example tvOS.location(url)
    */
   location: function (url) {
-    if (typeof window === 'object') {
+    if (typeof window === "object") {
       // Used tvOS app with hack.
-      this.dismiss()
+      this.dismiss();
       // Set a timeout (due lag of dismiss)
-      setTimeout(function (url) {
-        // Finally (Custom function!!!)
-        window.location(url)
-      }, 1000, url)
+      setTimeout(
+        function (url) {
+          // Finally (Custom function!!!)
+          window.location(url);
+        },
+        1000,
+        url
+      );
     }
   },
 
@@ -1252,7 +1325,8 @@ var tvOS = {
   toEmoij: function (str) {
     // > tvOS.emoij.nerd
     // < "..." = $1
-    return str.replace(/8\)/g, this.emoij.nerd) // Nerd Face
+    return str
+      .replace(/8\)/g, this.emoij.nerd) // Nerd Face
       .replace(/8-\)/g, this.emoij.nerd) // Nerd Face
       .replace(/B\)/g, this.emoij.nerd) // Nerd Face
       .replace(/g\B-\)/g, this.emoij.nerd) // Nerd Face
@@ -1266,59 +1340,59 @@ var tvOS = {
       .replace(/:-d/g, this.emoij.dsmilie) // Smilie :D
       .replace(/:D/g, this.emoij.dsmilie) // Smilie :D
       .replace(/:-D/g, this.emoij.dsmilie) // Smilie :D
-      .replace(/(H)/g, '\ud83d\ude0e') // Smilie with sun glasses
-      .replace(/(h)/g, '\ud83d\ude0e') // Smilie with sun glasses
-      .replace(/:\'\(/g, '\ud83d\ude2d') // Crying Smilie
-      .replace(/:\'-\(/g, '\ud83d\ude2d') // Crying Smilie
-      .replace(/:\(/g, '\u2639\ufe0f')
-      .replace(/:-\(/g, '\u2639\ufe0f')
-      .replace(/:\[/g, '\u2639\ufe0f')
-      .replace(/:-\[/g, '\u2639\ufe0f')
-      .replace(/:@/g, '\ud83d\ude21')
-      .replace(/:O/g, '\ud83d\ude2e')
-      .replace(/:-O/g, '\ud83d\ude2e')
-      .replace(/:o/g, '\ud83d\ude2e')
-      .replace(/:-o/g, '\ud83d\ude2e')
-      .replace(/:\//g, '\ud83e\udd14')
-      .replace(/:-\//g, '\ud83e\udd14')
-      .replace(/:\|/g, '\ud83d\ude10')
-      .replace(/:-\|/g, '\ud83d\ude10')
-      .replace(/xD/g, '\ud83d\ude35')
-      .replace(/XD/g, '\ud83d\ude35')
-      .replace(/xd/g, '\ud83d\ude35')
-      .replace(/xd/g, '\ud83d\ude35')
-      .replace(/x-D/g, '\ud83d\ude35')
-      .replace(/X-D/g, '\ud83d\ude35')
-      .replace(/x-d/g, '\ud83d\ude35')
-      .replace(/x-d/g, '\ud83d\ude35')
-      .replace(/:-p/g, '\ud83d\ude1c')
-      .replace(/:p/g, '\ud83d\ude1c')
-      .replace(/:-P/g, '\ud83d\ude1c')
-      .replace(/:P/g, '\ud83d\ude1c')
-      .replace(/;p/g, '\ud83d\ude1c')
-      .replace(/;P/g, '\ud83d\ude1c')
-      .replace(/;-p/g, '\ud83d\ude1c')
-      .replace(/;-P/g, '\ud83d\ude1c')
-      .replace(/:x/g, '\ud83d\ude36')
-      .replace(/:X/g, '\ud83d\ude36')
-      .replace(/:-x/g, '\ud83d\ude36')
-      .replace(/:-X/g, '\ud83d\ude36')
-      .replace(/:+1:/g, '\ud83d\udc4d')
-      .replace(/:-1:/g, '\ud83d\udc4e')
-      .replace(/;\)/g, '\ud83d\ude09')
-      .replace(/;-\)/g, '\ud83d\ude09')
-      .replace(/:$/g, '\u263a\ufe0f')
-      .replace(/:-$/g, '\u263a\ufe0f')
-      .replace(/:s/g, '\ud83d\ude16')
-      .replace(/:S/g, '\ud83d\ude16')
-      .replace(/:-s/g, '\ud83d\ude16')
-      .replace(/:-S/g, '\ud83d\ude16')
+      .replace(/(H)/g, "\ud83d\ude0e") // Smilie with sun glasses
+      .replace(/(h)/g, "\ud83d\ude0e") // Smilie with sun glasses
+      .replace(/:\'\(/g, "\ud83d\ude2d") // Crying Smilie
+      .replace(/:\'-\(/g, "\ud83d\ude2d") // Crying Smilie
+      .replace(/:\(/g, "\u2639\ufe0f")
+      .replace(/:-\(/g, "\u2639\ufe0f")
+      .replace(/:\[/g, "\u2639\ufe0f")
+      .replace(/:-\[/g, "\u2639\ufe0f")
+      .replace(/:@/g, "\ud83d\ude21")
+      .replace(/:O/g, "\ud83d\ude2e")
+      .replace(/:-O/g, "\ud83d\ude2e")
+      .replace(/:o/g, "\ud83d\ude2e")
+      .replace(/:-o/g, "\ud83d\ude2e")
+      .replace(/:\//g, "\ud83e\udd14")
+      .replace(/:-\//g, "\ud83e\udd14")
+      .replace(/:\|/g, "\ud83d\ude10")
+      .replace(/:-\|/g, "\ud83d\ude10")
+      .replace(/xD/g, "\ud83d\ude35")
+      .replace(/XD/g, "\ud83d\ude35")
+      .replace(/xd/g, "\ud83d\ude35")
+      .replace(/xd/g, "\ud83d\ude35")
+      .replace(/x-D/g, "\ud83d\ude35")
+      .replace(/X-D/g, "\ud83d\ude35")
+      .replace(/x-d/g, "\ud83d\ude35")
+      .replace(/x-d/g, "\ud83d\ude35")
+      .replace(/:-p/g, "\ud83d\ude1c")
+      .replace(/:p/g, "\ud83d\ude1c")
+      .replace(/:-P/g, "\ud83d\ude1c")
+      .replace(/:P/g, "\ud83d\ude1c")
+      .replace(/;p/g, "\ud83d\ude1c")
+      .replace(/;P/g, "\ud83d\ude1c")
+      .replace(/;-p/g, "\ud83d\ude1c")
+      .replace(/;-P/g, "\ud83d\ude1c")
+      .replace(/:x/g, "\ud83d\ude36")
+      .replace(/:X/g, "\ud83d\ude36")
+      .replace(/:-x/g, "\ud83d\ude36")
+      .replace(/:-X/g, "\ud83d\ude36")
+      .replace(/:+1:/g, "\ud83d\udc4d")
+      .replace(/:-1:/g, "\ud83d\udc4e")
+      .replace(/;\)/g, "\ud83d\ude09")
+      .replace(/;-\)/g, "\ud83d\ude09")
+      .replace(/:$/g, "\u263a\ufe0f")
+      .replace(/:-$/g, "\u263a\ufe0f")
+      .replace(/:s/g, "\ud83d\ude16")
+      .replace(/:S/g, "\ud83d\ude16")
+      .replace(/:-s/g, "\ud83d\ude16")
+      .replace(/:-S/g, "\ud83d\ude16")
       .replace(/<3/g, this.smilie.heart) // Heart
       .replace(/\(L\)/g, this.smilie.heart) // Heart
       .replace(/\(l\)/g, this.smilie.heart) // Heart
       .replace(/<\/3/g, this.smilie.brokenheart) // Broken heart
       .replace(/\(U\)/g, this.smilie.brokenheart) // Broken heart
-      .replace(/\(u\)/g, this.smilie.brokenheart) // Broken heart
+      .replace(/\(u\)/g, this.smilie.brokenheart); // Broken heart
   },
 
   /**
@@ -1331,17 +1405,17 @@ var tvOS = {
    */
   safeString: function (str) {
     var entityMap = {
-      '&': '&#38;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      '\'': '&#39;',
-      '/': '&#x2F;'
-    }
+      "&": "&#38;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+      "/": "&#x2F;",
+    };
 
     return String(str).replace(/[&<>''\/]/g, function (s) {
-      return entityMap[s]
-    })
+      return entityMap[s];
+    });
   },
 
   /**
@@ -1358,15 +1432,15 @@ var tvOS = {
    */
   ajax: function (url, method, callback) {
     // if no method, then just GET
-    if (typeof method === 'undefined') {
-      method = 'GET'
+    if (typeof method === "undefined") {
+      method = "GET";
     }
 
     // init XMLHTTPRequest
-    var xmlhttp = new XMLHttpRequest()
+    var xmlhttp = new XMLHttpRequest();
 
     // Open with method, url
-    xmlhttp.open(method, url, true)
+    xmlhttp.open(method, url, true);
 
     // If state is changed then
     xmlhttp.onreadystatechange = function () {
@@ -1375,19 +1449,20 @@ var tvOS = {
         // If status is 200 (Found)
         if (xmlhttp.status === 200) {
           // If type of callback is none
-          if (typeof callback === 'undefined') {
-            return xmlhttp.responseText
-          } else { // Or function
-            callback(xmlhttp.responseText)
+          if (typeof callback === "undefined") {
+            return xmlhttp.responseText;
+          } else {
+            // Or function
+            callback(xmlhttp.responseText);
           }
         } else {
-          return false
+          return false;
         }
       }
-    }
+    };
 
     // Send the actual request.
-    xmlhttp.send()
+    xmlhttp.send();
   },
 
   /**
@@ -1403,12 +1478,12 @@ var tvOS = {
    */
   _error: function (func, description) {
     // Print the error in a alertView
-    this.alert('Please read the manual' + (typeof func === 'string')
-      ? ' for ' + func
-      : '', // For 'function'
-    (typeof description === 'string')
-      ? description
-      : '') // Create a error.
+    this.alert(
+      "Please read the manual" + (typeof func === "string")
+        ? " for " + func
+        : "", // For 'function'
+      typeof description === "string" ? description : ""
+    ); // Create a error.
   },
 
   /**
@@ -1422,12 +1497,12 @@ var tvOS = {
    */
   translate: function (string) {
     // Does the translated string exists?
-    if (typeof tvOS.strings[string] === 'string') {
-      return tvOS.strings[string] // Return the translated string
-    } else if (tvOS.translations['en'][string] === 'string') {
-      return tvOS.translations['en'][string] // Otherwise the English string
+    if (typeof tvOS.strings[string] === "string") {
+      return tvOS.strings[string]; // Return the translated string
+    } else if (tvOS.translations["en"][string] === "string") {
+      return tvOS.translations["en"][string]; // Otherwise the English string
     } else {
-      return string // Otherwise; return the string
+      return string; // Otherwise; return the string
     }
   },
 
@@ -1445,96 +1520,98 @@ var tvOS = {
   parse_str: function (str, array) {
     // Modified version of https://raw.githubusercontent.com/kvz/phpjs/master/functions/strings/parse_str.js
     // Updated to support 'Unofficial' JavaScript Standard Coding Style
-    var strArr = String(str).replace(/^&/, '').replace(/&$/, '').split('&')
-    var sal = strArr.length
-    var i
-    var j
-    var ct
-    var p
-    var lastObj
-    var obj
-    var undef
-    var chr
-    var tmp
-    var key
-    var value
-    var postLeftBracketPos
-    var keys
-    var keysLen
+    var strArr = String(str).replace(/^&/, "").replace(/&$/, "").split("&");
+    var sal = strArr.length;
+    var i;
+    var j;
+    var ct;
+    var p;
+    var lastObj;
+    var obj;
+    var undef;
+    var chr;
+    var tmp;
+    var key;
+    var value;
+    var postLeftBracketPos;
+    var keys;
+    var keysLen;
     var fixStr = function (str) {
-      return decodeURIComponent(str.replace(/\+/g, '%20'))
-    }
+      return decodeURIComponent(str.replace(/\+/g, "%20"));
+    };
     if (!array) {
-      array = this.window
+      array = this.window;
     }
     for (i = 0; i < sal; i++) {
-      tmp = strArr[i].split('=')
-      key = fixStr(tmp[0])
-      value = (tmp.length < 2) ? '' : fixStr(tmp[1])
+      tmp = strArr[i].split("=");
+      key = fixStr(tmp[0]);
+      value = tmp.length < 2 ? "" : fixStr(tmp[1]);
 
-      while (key.charAt(0) === ' ') {
-        key = key.slice(1)
+      while (key.charAt(0) === " ") {
+        key = key.slice(1);
       }
-      if (key.indexOf('\x00') > -1) {
-        key = key.slice(0, key.indexOf('\x00'))
+      if (key.indexOf("\x00") > -1) {
+        key = key.slice(0, key.indexOf("\x00"));
       }
-      if (key && key.charAt(0) !== '[') {
-        keys = []
-        postLeftBracketPos = 0
+      if (key && key.charAt(0) !== "[") {
+        keys = [];
+        postLeftBracketPos = 0;
         for (j = 0; j < key.length; j++) {
-          if (key.charAt(j) === '[' && !postLeftBracketPos) {
-            postLeftBracketPos = j + 1
-          } else if (key.charAt(j) === ']') {
+          if (key.charAt(j) === "[" && !postLeftBracketPos) {
+            postLeftBracketPos = j + 1;
+          } else if (key.charAt(j) === "]") {
             if (postLeftBracketPos) {
               if (!keys.length) {
-                keys.push(key.slice(0, postLeftBracketPos - 1))
+                keys.push(key.slice(0, postLeftBracketPos - 1));
               }
-              keys.push(key.substr(postLeftBracketPos, j - postLeftBracketPos))
-              postLeftBracketPos = 0
-              if (key.charAt(j + 1) !== '[') {
-                break
+              keys.push(key.substr(postLeftBracketPos, j - postLeftBracketPos));
+              postLeftBracketPos = 0;
+              if (key.charAt(j + 1) !== "[") {
+                break;
               }
             }
           }
         }
         if (!keys.length) {
-          keys = [key]
+          keys = [key];
         }
         for (j = 0; j < keys[0].length; j++) {
-          chr = keys[0].charAt(j)
-          if (chr === ' ' || chr === '.' || chr === '[') {
-            keys[0] = keys[0].substr(0, j) + '_' + keys[0].substr(j + 1)
+          chr = keys[0].charAt(j);
+          if (chr === " " || chr === "." || chr === "[") {
+            keys[0] = keys[0].substr(0, j) + "_" + keys[0].substr(j + 1);
           }
-          if (chr === '[') {
-            break
+          if (chr === "[") {
+            break;
           }
         }
 
-        obj = array
+        obj = array;
 
         for (j = 0, keysLen = keys.length; j < keysLen; j++) {
-          key = keys[j].replace(/^['"]/, '').replace(/['"]$/, '')
-          var lastIter = j !== keys.length - 1
-          lastObj = obj
-          if (lastIter) { } // Just for error hiding.
-          if ((key !== '' && key !== ' ') || j === 0) {
+          key = keys[j].replace(/^['"]/, "").replace(/['"]$/, "");
+          var lastIter = j !== keys.length - 1;
+          lastObj = obj;
+          if (lastIter) {
+          } // Just for error hiding.
+          if ((key !== "" && key !== " ") || j === 0) {
             if (obj[key] === undef) {
-              obj[key] = {}
+              obj[key] = {};
             }
-            obj = obj[key]
-          } else { // To insert new dimension
-            ct = -1
+            obj = obj[key];
+          } else {
+            // To insert new dimension
+            ct = -1;
             for (p in obj) {
               if (obj.hasOwnProperty(p)) {
                 if (+p > ct && p.match(/^\d+$/g)) {
-                  ct = +p
+                  ct = +p;
                 }
               }
             }
-            key = ct + 1
+            key = ct + 1;
           }
         }
-        lastObj[key] = value
+        lastObj[key] = value;
       }
     }
   },
@@ -1553,37 +1630,41 @@ var tvOS = {
    */
   loadYouTubeVideo: function (videoID, callback) {
     // Use ajax to load video.
-    tvOS.ajax('http://www.youtube.com/get_video_info?video_id=' + videoID + '&asv=2', 'GET', function (data) {
-      var results = []
-      var info = {}
+    tvOS.ajax(
+      "http://www.youtube.com/get_video_info?video_id=" + videoID + "&asv=2",
+      "GET",
+      function (data) {
+        var results = [];
+        var info = {};
 
-      // Parse the string, and turn it into a array
-      tvOS.parse_str(data, info)
+        // Parse the string, and turn it into a array
+        tvOS.parse_str(data, info);
 
-      // Get the streams
-      var streams = info['url_encoded_fmt_stream_map'].split(',')
+        // Get the streams
+        var streams = info["url_encoded_fmt_stream_map"].split(",");
 
-      // Loop trough the streams
-      var i = 0
-      // for (var i = 0; i < streams.length; i++) {
-      //
-      // real_stream (temporary) array
-      var real_stream = {}
-      // parse this string into a array
-      tvOS.parse_str(streams[i], real_stream)
-      // ok, magic
-      real_stream['url'] += '&signature=' + real_stream['sig']
-      // push it
-      results.push(real_stream)
-      // }
-      // Return the first video url
-      if (typeof callback === 'function') {
-        callback(results[0]['url'])
-      } else {
-        console.log('URL=' + results[0]['url'])
-        tvOS._error()
+        // Loop trough the streams
+        var i = 0;
+        // for (var i = 0; i < streams.length; i++) {
+        //
+        // real_stream (temporary) array
+        var real_stream = {};
+        // parse this string into a array
+        tvOS.parse_str(streams[i], real_stream);
+        // ok, magic
+        real_stream["url"] += "&signature=" + real_stream["sig"];
+        // push it
+        results.push(real_stream);
+        // }
+        // Return the first video url
+        if (typeof callback === "function") {
+          callback(results[0]["url"]);
+        } else {
+          console.log("URL=" + results[0]["url"]);
+          tvOS._error();
+        }
       }
-    })
+    );
   },
 
   /**
@@ -1603,56 +1684,84 @@ var tvOS = {
    * @example   console.log(register_email)
    * @example }, 'Register') // Example with Register (no image)
    */
-  login: function (title, callback, text, image, callback_register, register, needPWD) {
-    if (typeof callback === 'function') {
-      var buttons = '<button><text>' + text + '</text></button>'
+  login: function (
+    title,
+    callback,
+    text,
+    image,
+    callback_register,
+    register,
+    needPWD
+  ) {
+    if (typeof callback === "function") {
+      var buttons = "<button><text>" + text + "</text></button>";
 
-      if (typeof needPWD !== 'boolean') { // Step #1
-        buttons = '<button><text>' + text.replace(text, tvOS.translate('next')) + '</text></button>'
+      if (typeof needPWD !== "boolean") {
+        // Step #1
+        buttons =
+          "<button><text>" +
+          text.replace(text, tvOS.translate("next")) +
+          "</text></button>";
       }
 
-      if (typeof callback_register === 'function' && typeof register === 'string') {
-        buttons += '<button><text>' + register + '</text></button>'
+      if (
+        typeof callback_register === "function" &&
+        typeof register === "string"
+      ) {
+        buttons += "<button><text>" + register + "</text></button>";
       }
 
-      var template = tvOS.loginTemplate.replace('tvOS_title', title)
-        .replace('tvOS_title', title)
-        .replace('tvOS_image', (typeof image === 'string' && image !== '')
-          ? '<img src=\'' + image + '\' />'
-          : '')
-        .replace('tvOS_buttons', buttons)
-        .replace('tvOS_secure', (typeof needPWD !== 'boolean')
-          ? ''
-          : 'secure=\'true\' ')
+      var template = tvOS.loginTemplate
+        .replace("tvOS_title", title)
+        .replace("tvOS_title", title)
+        .replace(
+          "tvOS_image",
+          typeof image === "string" && image !== ""
+            ? "<img src='" + image + "' />"
+            : ""
+        )
+        .replace("tvOS_buttons", buttons)
+        .replace(
+          "tvOS_secure",
+          typeof needPWD !== "boolean" ? "" : "secure='true' "
+        );
 
-      var ttemp = tvOS.makeDocument(template)
-      var ttext = ttemp.getElementById('inputText')
-      ttemp.addEventListener('select', function (e) {
+      var ttemp = tvOS.makeDocument(template);
+      var ttext = ttemp.getElementById("inputText");
+      ttemp.addEventListener("select", function (e) {
         // To human readable...
-        var pressed = e.target.innerHTML
-        pressed = pressed.split('>')[1]
-        pressed = pressed.split('<')[0]
+        var pressed = e.target.innerHTML;
+        pressed = pressed.split(">")[1];
+        pressed = pressed.split("<")[0];
 
         // Get keyboard text (uh. imput field ;))
-        var keyboard = ttext.getFeature('Keyboard')
-        var inputText = keyboard.text
+        var keyboard = ttext.getFeature("Keyboard");
+        var inputText = keyboard.text;
 
         if (pressed === text) {
           // Clicked on the 'login' button!
-          callback(tvOS.loginText, inputText)
+          callback(tvOS.loginText, inputText);
         } else if (pressed === register) {
           // Clicked on the 'register' button!
-          callback_register(inputText)
+          callback_register(inputText);
         } else {
           // Clicked on our 'Next' button!
-          tvOS.loginText = inputText
-          tvOS.login(title, callback, text, image, callback_register, register, true) // Login? :D
+          tvOS.loginText = inputText;
+          tvOS.login(
+            title,
+            callback,
+            text,
+            image,
+            callback_register,
+            register,
+            true
+          ); // Login? :D
         }
-      })
+      });
 
-      tvOS.display(ttemp)
+      tvOS.display(ttemp);
     } else {
-      this._error('login')
+      this._error("login");
     }
   },
 
@@ -1863,20 +1972,20 @@ var tvOS = {
         </shelf>
       </collectionList>
     </searchTemplate>
-  </document>`
-}
+  </document>`,
+};
 
 // * tvOS.strings
 // *
 // * tvOS.js load translations
 // *
 // * @var object strings
-if (typeof tvOS.translations[tvOS.lang] === 'object') {
+if (typeof tvOS.translations[tvOS.lang] === "object") {
   // Does the language exists? then load it
-  tvOS.strings = tvOS.translations[tvOS.lang]
+  tvOS.strings = tvOS.translations[tvOS.lang];
 } else {
   // Otherwise load the english language
-  tvOS.strings = tvOS.translations['en']
+  tvOS.strings = tvOS.translations["en"];
 }
 
 // * Loaded
@@ -1885,7 +1994,9 @@ if (typeof tvOS.translations[tvOS.lang] === 'object') {
 // *
 // * @var object js
 // * @example tvOS.js v0.0.5 stable (nl)
-console.log('tvOS.js v' + tvOS.js.version + ' ' + tvOS.js.release + ' (' + tvOS.lang + ')')
+console.log(
+  "tvOS.js v" + tvOS.js.version + " " + tvOS.js.release + " (" + tvOS.lang + ")"
+);
 
 /*
  * App.onError
@@ -1894,12 +2005,12 @@ console.log('tvOS.js v' + tvOS.js.version + ' ' + tvOS.js.release + ' (' + tvOS.
  */
 App.onError = function (error) {
   // Log the error
-  console.log(error)
+  console.log(error);
   // And reload
-  App.reload()
+  App.reload();
   // TODO: Push the error to a server for logging
   // TODO -> MAKE SERVER
   // TODO -> SEND ERROR
-}
+};
 
 // END OF tvOS.js

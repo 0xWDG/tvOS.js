@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2021 Wesley de Groot, OSS@WesleyDeGroot.nl
+Copyright (c) 2024 Wesley de Groot, email@WesleydeGroot.nl
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
