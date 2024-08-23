@@ -21,11 +21,11 @@ See some examples here:
 
 ##### Example (apps)
 
-- [Twitter](https://github.com/0xWDG/tvOS.js/blob/master/Server/example_twitter.js)
-- [Instagram](https://github.com/0xWDG/tvOS.js/blob/master/Server/example_instagram.js)
-- [IMDB](https://github.com/0xWDG/tvOS.js/blob/master/Server/example_IMDB.js)
-- [NU.nl](https://github.com/0xWDG/tvOS.js/blob/master/Server/example_app2.js) (dutch news website)
-- [Meetups in amsterdam](https://github.com/0xWDG/tvOS.js/blob/master/Server/example_app.js) by The App Team ([git](https://github.com/The-app-team)/[www](http://www.the-app-team.com))
+- [Twitter](https://github.com/0xWDG/tvOS.js/blob/main/docs/example_twitter.js)
+- [Instagram](https://github.com/0xWDG/tvOS.js/blob/main/docs/example_instagram.js)
+- [IMDB](https://github.com/0xWDG/tvOS.js/blob/main/docs/example_IMDB.js)
+- [NU.nl](https://github.com/0xWDG/tvOS.js/blob/main/docs/example_app2.js) (dutch news website)
+- [Meetups in amsterdam](https://github.com/0xWDG/tvOS.js/blob/main/docs/example_app.js) by The App Team ([git](https://github.com/The-app-team)/[www](http://www.the-app-team.com))
 
 Made with 🩵 in 🇳🇱
 
