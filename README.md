@@ -1,5 +1,9 @@
 # tvOS.js
 
+> [!WARNING]
+> TVML has been deprecated by Apple. \
+> https://developer.apple.com/documentation/TVML
+
 tvOS.js is a JavaScript Library for easier developing in TVJS/TVML
 
 - Built-in TVML Templates
